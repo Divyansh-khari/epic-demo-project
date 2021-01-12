@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Login Page </title>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+  <link rel="stylesheet" href="./stylesheets/style.css" />
+
+
     <style>
       body{
         background-color: white;
@@ -29,7 +31,8 @@
 
     </head>
     <body>
-      <img src="C:\Users\divyansh\Desktop\Epic-Safety-Logo.pdf" width="200" height="120">
+      <% include ../partials/nav.ejs %>
+      <img src="C:\Users\divyansh\Desktop\Epic-Safety-Logo-1.png" width="200" height="120">
       <h1 class="elon">Login Page for Users:</h1>
       <div class= "qwerty">
       <form class="tyler" action="/login" method="post">

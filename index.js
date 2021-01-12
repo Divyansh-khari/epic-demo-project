@@ -41,6 +41,6 @@ app.post('/login', (req,res)=>{
   res.send("<h1> Hi, Welcome to the Main Page of the Website!!</h1>");
 });
 app.post('/register',(req, res)=>{
-  res.render(pages/login);
+  res.render('pages/login');
 });
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
