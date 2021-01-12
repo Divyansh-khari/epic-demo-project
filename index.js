@@ -35,4 +35,7 @@ var app=express()
   }
   return result;
 }
+app.post('/login', (req,res)=>{
+  res.send("Hi");
+})
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
