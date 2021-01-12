@@ -36,6 +36,6 @@ var app=express()
   return result;
 }
 app.post('/login', (req,res)=>{
-  res.send("<h1 align="center"> Hi, Welcome to the Main Page of the Website!!</h1>");
+  res.send("<h1> Hi, Welcome to the Main Page of the Website!!</h1>");
 })
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
