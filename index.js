@@ -10,10 +10,12 @@ const pool = new Pool({
 const PORT = process.env.PORT || 5000;
 
 var app=express()
-  app.use(express.static(path.join(__dirname, 'public')))
-  app.set('views', path.join(__dirname, 'views'))
+  app.use(express.json());
+  app.use(express.urlencoded({extended:false}));
+  app.use(express.static(path.join(__dirname, 'public')));
+  app.set('views', path.join(__dirname, 'views'));
   app.set('view engine', 'ejs')
-  app.get('/', (req, res) => res.render('pages/index'))
+  app.get('/', (req, res) => res.render('pages/index'));
   app.get('/db', async (req, res) => {
     try {
       const client = await pool.connect();
@@ -25,8 +27,8 @@ var app=express()
       console.error(err);
       res.send("Error " + err);
     }
-  })
-  app.get('/times', (req, res) => res.send(showTimes()))
+  });
+  app.get('/times', (req, res) => res.send(showTimes()));
   showTimes = () => {
   let result = '';
   const times = process.env.TIMES || 5;
@@ -37,5 +39,8 @@ var app=express()
 }
 app.post('/login', (req,res)=>{
   res.send("<h1> Hi, Welcome to the Main Page of the Website!!</h1>");
-})
-app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+});
+app.post('/register',(req, res)=>{
+  res.render(pages/login);
+});
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
