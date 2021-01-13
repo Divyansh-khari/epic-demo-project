@@ -1,31 +1,836 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <% include ../partials/header.ejs %>
+<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+span.cls_004{font-family:Arial,serif;font-size:16.0px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Arial,serif;font-size:16.0px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_005{font-family:"Calibri",serif;font-size:11.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_005{font-family:"Calibri",serif;font-size:11.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_003{font-family:"Calibri",serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_003{font-family:"Calibri",serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_007{font-family:Arial,serif;font-size:20.0px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_007{font-family:Arial,serif;font-size:20.0px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_002{font-family:Arial,serif;font-size:20.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_002{font-family:Arial,serif;font-size:20.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_009{font-family:Arial,serif;font-size:16.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_009{font-family:Arial,serif;font-size:16.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_010{font-family:Arial,serif;font-size:11.6px;color:rgb(31,77,120);font-weight:normal;font-style:italic;text-decoration: none}
+div.cls_010{font-family:Arial,serif;font-size:11.6px;color:rgb(31,77,120);font-weight:normal;font-style:italic;text-decoration: none}
+span.cls_013{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_013{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_014{font-family:Courier New,serif;font-size:11.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_014{font-family:Courier New,serif;font-size:11.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_015{font-family:Arial,serif;font-size:11.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_015{font-family:Arial,serif;font-size:11.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_016{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_016{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_018{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_018{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_017{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_017{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_019{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weight:bold;font-style:italic;text-decoration: none}
+div.cls_019{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weight:bold;font-style:italic;text-decoration: none}
+span.cls_020{font-family:Arial,serif;font-size:10.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_020{font-family:Arial,serif;font-size:10.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_021{font-family:Arial,serif;font-size:11.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_021{font-family:Arial,serif;font-size:11.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_022{font-family:Arial,serif;font-size:10.0px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_022{font-family:Arial,serif;font-size:10.0px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_006{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_006{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_042{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: underline}
+div.cls_042{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_024{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:italic;text-decoration: none}
+div.cls_024{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:italic;text-decoration: none}
+span.cls_025{font-family:Arial,serif;font-size:11.0px;color:rgb(0,0,0);font-weight:normal;font-style:italic;text-decoration: none}
+div.cls_025{font-family:Arial,serif;font-size:11.0px;color:rgb(0,0,0);font-weight:normal;font-style:italic;text-decoration: none}
+span.cls_043{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: underline}
+div.cls_043{font-family:Arial,serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_028{font-family:Arial,serif;font-size:14.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_028{font-family:Arial,serif;font-size:14.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_029{font-family:Arial,serif;font-size:10.0px;color:rgb(0,0,0);font-weight:normal;font-style:italic;text-decoration: none}
+div.cls_029{font-family:Arial,serif;font-size:10.0px;color:rgb(0,0,0);font-weight:normal;font-style:italic;text-decoration: none}
+span.cls_030{font-family:Arial,serif;font-size:10.6px;color:rgb(51,51,51);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_030{font-family:Arial,serif;font-size:10.6px;color:rgb(51,51,51);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_031{font-family:Courier New,serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_031{font-family:Courier New,serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_032{font-family:Arial,serif;font-size:11.1px;color:rgb(85,85,85);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_032{font-family:Arial,serif;font-size:11.1px;color:rgb(85,85,85);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_033{font-family:Arial,serif;font-size:11.1px;color:rgb(85,85,85);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_033{font-family:Arial,serif;font-size:11.1px;color:rgb(85,85,85);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_034{font-family:"Calibri Italic",serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:italic;text-decoration: none}
+div.cls_034{font-family:"Calibri Italic",serif;font-size:11.1px;color:rgb(0,0,0);font-weight:normal;font-style:italic;text-decoration: none}
+span.cls_035{font-family:"Cambria Math",serif;font-size:10.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_035{font-family:"Cambria Math",serif;font-size:10.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_036{font-family:Arial,serif;font-size:9.1px;color:rgb(0,0,0);font-weight:bold;font-style:italic;text-decoration: none}
+div.cls_036{font-family:Arial,serif;font-size:9.1px;color:rgb(0,0,0);font-weight:bold;font-style:italic;text-decoration: none}
+span.cls_037{font-family:Arial,serif;font-size:9.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_037{font-family:Arial,serif;font-size:9.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_039{font-family:"Calibri Bold",serif;font-size:9.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_039{font-family:"Calibri Bold",serif;font-size:9.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_040{font-family:Arial,serif;font-size:9.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_040{font-family:Arial,serif;font-size:9.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_044{font-family:"Calibri",serif;font-size:9.1px;color:rgb(4,98,193);font-weight:normal;font-style:normal;text-decoration: underline}
+div.cls_044{font-family:"Calibri",serif;font-size:9.1px;color:rgb(4,98,193);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_026{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:bold;font-style:italic;text-decoration: none}
+div.cls_026{font-family:Arial,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:bold;font-style:italic;text-decoration: none}
+-->
+</style>
+<script type="text/javascript" src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+</head>
+<body>
+<div style="position:absolute;left:50%;margin-left:-198px;top:0px;width:396px;height:612px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/background01.jpg" width=396 height=612></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-198px;top:622px;width:396px;height:612px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/background02.jpg" width=396 height=612></div>
+<div style="position:absolute;left:36.00px;top:34.80px" class="cls_004"><span class="cls_004">Table of Contents</span></div>
+<div style="position:absolute;left:36.00px;top:58.34px" class="cls_005"><span class="cls_005">1.</span></div>
+<div style="position:absolute;left:57.98px;top:58.34px" class="cls_003"><span class="cls_003">Application Overview</span></div>
+<div style="position:absolute;left:336.10px;top:58.34px" class="cls_003"><span class="cls_003">3</span></div>
+<div style="position:absolute;left:47.06px;top:77.78px" class="cls_003"><span class="cls_003">1.1.</span></div>
+<div style="position:absolute;left:80.06px;top:77.78px" class="cls_003"><span class="cls_003">Identifying the Parts</span></div>
+<div style="position:absolute;left:336.10px;top:77.78px" class="cls_003"><span class="cls_003">3</span></div>
+<div style="position:absolute;left:47.06px;top:97.22px" class="cls_003"><span class="cls_003">1.2.</span></div>
+<div style="position:absolute;left:80.06px;top:97.22px" class="cls_003"><span class="cls_003">The AC Power</span></div>
+<div style="position:absolute;left:336.10px;top:97.22px" class="cls_003"><span class="cls_003">6</span></div>
+<div style="position:absolute;left:47.06px;top:116.78px" class="cls_003"><span class="cls_003">1.3.</span></div>
+<div style="position:absolute;left:80.06px;top:116.78px" class="cls_003"><span class="cls_003">Line seizure</span></div>
+<div style="position:absolute;left:336.10px;top:116.78px" class="cls_003"><span class="cls_003">6</span></div>
+<div style="position:absolute;left:47.06px;top:136.22px" class="cls_003"><span class="cls_003">1.4.</span></div>
+<div style="position:absolute;left:80.06px;top:136.22px" class="cls_003"><span class="cls_003">How to install Apex</span></div>
+<div style="position:absolute;left:336.10px;top:136.22px" class="cls_003"><span class="cls_003">7</span></div>
+<div style="position:absolute;left:36.00px;top:155.78px" class="cls_005"><span class="cls_005">2.</span></div>
+<div style="position:absolute;left:57.98px;top:155.78px" class="cls_003"><span class="cls_003">Operation</span></div>
+<div style="position:absolute;left:336.10px;top:155.78px" class="cls_003"><span class="cls_003">8</span></div>
+<div style="position:absolute;left:47.06px;top:175.22px" class="cls_003"><span class="cls_003">2.1.</span></div>
+<div style="position:absolute;left:80.06px;top:175.22px" class="cls_003"><span class="cls_003">Help Call Activation</span></div>
+<div style="position:absolute;left:336.10px;top:175.22px" class="cls_003"><span class="cls_003">8</span></div>
+<div style="position:absolute;left:47.06px;top:194.81px" class="cls_003"><span class="cls_003">2.2.</span></div>
+<div style="position:absolute;left:80.06px;top:194.81px" class="cls_003"><span class="cls_003">Standby Mode</span></div>
+<div style="position:absolute;left:330.46px;top:194.81px" class="cls_003"><span class="cls_003">10</span></div>
+<div style="position:absolute;left:36.00px;top:214.25px" class="cls_005"><span class="cls_005">3.</span></div>
+<div style="position:absolute;left:57.98px;top:214.25px" class="cls_003"><span class="cls_003">Appendix</span></div>
+<div style="position:absolute;left:330.46px;top:214.25px" class="cls_003"><span class="cls_003">16</span></div>
+<div style="position:absolute;left:47.06px;top:233.69px" class="cls_003"><span class="cls_003">3.1.</span></div>
+<div style="position:absolute;left:80.06px;top:233.69px" class="cls_003"><span class="cls_003">Apex Voice Prompts</span></div>
+<div style="position:absolute;left:330.46px;top:233.69px" class="cls_003"><span class="cls_003">16</span></div>
+<div style="position:absolute;left:186.29px;top:572.64px" class="cls_003"><span class="cls_003">2</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-198px;top:1244px;width:396px;height:612px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/background03.jpg" width=396 height=612></div>
+<div style="position:absolute;left:54.02px;top:34.56px" class="cls_007"><span class="cls_007">1. </span><span class="cls_002">  Application Overview</span></div>
+<div style="position:absolute;left:54.02px;top:69.62px" class="cls_009"><span class="cls_009">1.1.  Identifying the Parts</span></div>
+<div style="position:absolute;left:54.02px;top:94.70px" class="cls_010"><span class="cls_010">TOP VIEW</span></div>
+<div style="position:absolute;left:54.02px;top:269.69px" class="cls_010"><span class="cls_010">REAR VIEW</span></div>
+<div style="position:absolute;left:54.02px;top:389.47px" class="cls_010"><span class="cls_010">BACK VIEW</span></div>
+<div style="position:absolute;left:204.31px;top:572.64px" class="cls_003"><span class="cls_003">3</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-198px;top:1866px;width:396px;height:612px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/background04.jpg" width=396 height=612></div>
+<div style="position:absolute;left:41.66px;top:35.04px" class="cls_013"><span class="cls_013">1.</span></div>
+<div style="position:absolute;left:71.78px;top:35.04px" class="cls_013"><span class="cls_013">Blue Help Button (with backlight)</span></div>
+<div style="position:absolute;left:73.22px;top:58.46px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  Press to call for help</span></div>
+<div style="position:absolute;left:73.22px;top:74.18px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  Backlight will light up during calls</span></div>
+<div style="position:absolute;left:73.22px;top:90.02px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  Backlight  flashes  during  the HELP ARRIVED</span></div>
+<div style="position:absolute;left:91.22px;top:105.86px" class="cls_016"><span class="cls_016">MODE</span></div>
+<div style="position:absolute;left:73.22px;top:121.70px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  Backlight designed for easy access at night</span></div>
+<div style="position:absolute;left:41.66px;top:153.14px" class="cls_013"><span class="cls_013">2.</span></div>
+<div style="position:absolute;left:75.14px;top:153.14px" class="cls_013"><span class="cls_013">Green Reset Button</span></div>
+<div style="position:absolute;left:73.22px;top:176.54px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  Press to end a help/phone call during an active call</span></div>
+<div style="position:absolute;left:91.22px;top:192.41px" class="cls_016"><span class="cls_016">session</span></div>
+<div style="position:absolute;left:73.22px;top:208.25px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  Press to confirm that help has arrived</span></div>
+<div style="position:absolute;left:73.22px;top:223.97px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  Press once to check in for inactivity monitoring</span></div>
+<div style="position:absolute;left:73.22px;top:239.81px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  Press and hold for 16 seconds to disable inactivity</span></div>
+<div style="position:absolute;left:91.22px;top:255.65px" class="cls_016"><span class="cls_016">monitoring</span></div>
+<div style="position:absolute;left:73.22px;top:271.49px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  Press and hold for 3 seconds to dial the</span></div>
+<div style="position:absolute;left:91.22px;top:287.21px" class="cls_016"><span class="cls_016">programmed non-emergency phone number</span></div>
+<div style="position:absolute;left:73.22px;top:303.05px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  Before Apex dials out for alarm reporting, press</span></div>
+<div style="position:absolute;left:91.22px;top:318.91px" class="cls_016"><span class="cls_016">once to cancel the alarm reporting</span></div>
+<div style="position:absolute;left:73.22px;top:334.75px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  Press once to report that help has arrived when</span></div>
+<div style="position:absolute;left:91.22px;top:350.47px" class="cls_016"><span class="cls_016">help arrived mode is active</span></div>
+<div style="position:absolute;left:73.22px;top:366.31px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  Press once to cancel alarm reporting</span></div>
+<div style="position:absolute;left:73.22px;top:382.15px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  Press twice to cancel help arrived mode</span></div>
+<div style="position:absolute;left:41.66px;top:419.59px" class="cls_013"><span class="cls_013">3.</span></div>
+<div style="position:absolute;left:71.78px;top:419.59px" class="cls_013"><span class="cls_013">Red LED Light</span></div>
+<div style="position:absolute;left:73.22px;top:442.06px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  Solid light - a call is in progress</span></div>
+<div style="position:absolute;left:41.66px;top:476.02px" class="cls_013"><span class="cls_013">4.</span></div>
+<div style="position:absolute;left:71.78px;top:476.02px" class="cls_013"><span class="cls_013">Green LED Light</span></div>
+<div style="position:absolute;left:73.22px;top:493.30px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  Solid light - when Apex is ON</span></div>
+<div style="position:absolute;left:73.22px;top:509.14px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  Flashes every second - when the power cord is</span></div>
+<div style="position:absolute;left:91.22px;top:524.98px" class="cls_016"><span class="cls_016">unplugged</span></div>
+<div style="position:absolute;left:186.29px;top:572.64px" class="cls_003"><span class="cls_003">4</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-198px;top:2488px;width:396px;height:612px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/background05.jpg" width=396 height=612></div>
+<div style="position:absolute;left:91.22px;top:35.16px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  Flashes every two seconds - when the unit or</span></div>
+<div style="position:absolute;left:109.22px;top:51.00px" class="cls_016"><span class="cls_016">associated devices have low battery</span></div>
+<div style="position:absolute;left:91.22px;top:66.86px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  A slow flash - indicates a phone line problem</span></div>
+<div style="position:absolute;left:91.22px;top:82.58px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  A quick flash every 2 seconds - indicates</span></div>
+<div style="position:absolute;left:109.22px;top:98.42px" class="cls_016"><span class="cls_016">supervision failure</span></div>
+<div style="position:absolute;left:59.66px;top:131.42px" class="cls_013"><span class="cls_013">5.</span></div>
+<div style="position:absolute;left:89.78px;top:131.42px" class="cls_013"><span class="cls_013">Speaker</span></div>
+<div style="position:absolute;left:59.66px;top:154.58px" class="cls_013"><span class="cls_013">6.</span></div>
+<div style="position:absolute;left:89.78px;top:154.58px" class="cls_013"><span class="cls_013">Microphone</span></div>
+<div style="position:absolute;left:59.66px;top:177.86px" class="cls_013"><span class="cls_013">7.</span></div>
+<div style="position:absolute;left:89.78px;top:177.86px" class="cls_013"><span class="cls_013">Phone Jack (marked)</span></div>
+<div style="position:absolute;left:91.22px;top:201.29px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  Telephone unit connection</span></div>
+<div style="position:absolute;left:59.66px;top:238.73px" class="cls_013"><span class="cls_013">8.</span></div>
+<div style="position:absolute;left:89.78px;top:238.73px" class="cls_013"><span class="cls_013">Line Jack (marked)</span></div>
+<div style="position:absolute;left:91.22px;top:262.13px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  Phone line connection from wall</span></div>
+<div style="position:absolute;left:59.66px;top:299.69px" class="cls_013"><span class="cls_013">9.</span></div>
+<div style="position:absolute;left:89.78px;top:299.69px" class="cls_013"><span class="cls_013">DC Jack</span></div>
+<div style="position:absolute;left:91.22px;top:322.99px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  DC 12V 1A power adapter</span><span class="cls_015"> </span><span class="cls_016">connection</span></div>
+<div style="position:absolute;left:59.66px;top:360.55px" class="cls_013"><span class="cls_013">10.   Battery Switch</span></div>
+<div style="position:absolute;left:59.66px;top:383.83px" class="cls_013"><span class="cls_013">11.   Temperature Sensor</span></div>
+<div style="position:absolute;left:59.66px;top:424.27px" class="cls_013"><span class="cls_013">12.   Local Programming Input</span></div>
+<div style="position:absolute;left:91.22px;top:451.78px" class="cls_014"><span class="cls_014">o</span><span class="cls_015"> </span><span class="cls_016">  Use special telephone cord to connect</span><span class="cls_015"> </span><span class="cls_016">Apex</span></div>
+<div style="position:absolute;left:109.22px;top:467.62px" class="cls_016"><span class="cls_016">and a telephone unit for local programming.</span></div>
+<div style="position:absolute;left:59.66px;top:505.06px" class="cls_013"><span class="cls_013">13.   Mounting Holes</span></div>
+<div style="position:absolute;left:59.66px;top:528.34px" class="cls_013"><span class="cls_013">14.   Mounting Bracket</span></div>
+<div style="position:absolute;left:204.31px;top:572.64px" class="cls_003"><span class="cls_003">5</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-198px;top:3110px;width:396px;height:612px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/background06.jpg" width=396 height=612></div>
+<div style="position:absolute;left:36.00px;top:34.80px" class="cls_009"><span class="cls_009">1.2.  The AC Power</span></div>
+<div style="position:absolute;left:50.18px;top:64.22px" class="cls_016"><span class="cls_016">Please only use the power adapter that is included in the kit</span></div>
+<div style="position:absolute;left:50.18px;top:79.94px" class="cls_016"><span class="cls_016">to  power  up  the  base  unit.  In  addition,  there  is  a</span></div>
+<div style="position:absolute;left:50.18px;top:95.78px" class="cls_016"><span class="cls_016">rechargeable battery inside Apex that serves as a backup</span></div>
+<div style="position:absolute;left:50.18px;top:111.62px" class="cls_016"><span class="cls_016">during power failures.</span></div>
+<div style="position:absolute;left:50.18px;top:132.98px" class="cls_018"><span class="cls_018"></span><span class="cls_017"> </span><span class="cls_016">  During normal operation, the power adapter supplies</span></div>
+<div style="position:absolute;left:71.42px;top:149.66px" class="cls_016"><span class="cls_016">power to Apex and recharges the battery.</span></div>
+<div style="position:absolute;left:50.18px;top:171.74px" class="cls_018"><span class="cls_018"></span><span class="cls_017"> </span><span class="cls_016">  It takes 72 hours to fully charge the battery</span></div>
+<div style="position:absolute;left:50.18px;top:194.33px" class="cls_018"><span class="cls_018"></span><span class="cls_017"> </span><span class="cls_016">  The battery can be manually disconnected</span><span class="cls_015"> </span><span class="cls_016"> by the</span></div>
+<div style="position:absolute;left:71.42px;top:211.13px" class="cls_016"><span class="cls_016">battery switch located at the back of Apex.</span></div>
+<div style="position:absolute;left:50.18px;top:232.49px" class="cls_018"><span class="cls_018"></span><span class="cls_017"> </span><span class="cls_016">  The battery switch is set as OFF by default. When OFF,</span></div>
+<div style="position:absolute;left:71.42px;top:249.17px" class="cls_016"><span class="cls_016">the battery will not be charged, nor will it serve as a</span></div>
+<div style="position:absolute;left:71.42px;top:265.01px" class="cls_016"><span class="cls_016">backup   power   source   during   power   failures.</span></div>
+<div style="position:absolute;left:71.42px;top:280.85px" class="cls_019"><span class="cls_019">Remember to slide the battery switch to ON after</span></div>
+<div style="position:absolute;left:71.42px;top:296.69px" class="cls_019"><span class="cls_019">plugging in the AC power adapter.</span></div>
+<div style="position:absolute;left:36.00px;top:349.51px" class="cls_009"><span class="cls_009">1.3.  Line seizure</span></div>
+<div style="position:absolute;left:50.18px;top:372.79px" class="cls_016"><span class="cls_016">Apex features telephone monitor and line seizure and have</span></div>
+<div style="position:absolute;left:50.18px;top:388.63px" class="cls_016"><span class="cls_016">control over the telephone line. When wired correctly, even if</span></div>
+<div style="position:absolute;left:50.18px;top:404.47px" class="cls_016"><span class="cls_016">the phone line is engaged, Apex can circumvent the line and</span></div>
+<div style="position:absolute;left:50.18px;top:420.19px" class="cls_016"><span class="cls_016">place a help call.</span></div>
+<div style="position:absolute;left:50.18px;top:442.06px" class="cls_016"><span class="cls_016">The feature is only available when the phone line from the</span></div>
+<div style="position:absolute;left:50.18px;top:457.90px" class="cls_016"><span class="cls_016">wall  is  connected  to  the  Line  Jack  on  Apex  and  the</span></div>
+<div style="position:absolute;left:50.18px;top:473.74px" class="cls_016"><span class="cls_016">household phones are connected to the Phone Jack on</span></div>
+<div style="position:absolute;left:50.18px;top:489.46px" class="cls_016"><span class="cls_016">Apex.</span></div>
+<div style="position:absolute;left:50.18px;top:511.30px" class="cls_016"><span class="cls_016">Please refer to Step 1 of your Quick start Guide for a detailed</span></div>
+<div style="position:absolute;left:50.18px;top:527.14px" class="cls_016"><span class="cls_016">diagram.</span></div>
+<div style="position:absolute;left:186.29px;top:572.64px" class="cls_003"><span class="cls_003">6</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-198px;top:3732px;width:396px;height:612px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/background07.jpg" width=396 height=612></div>
+<div style="position:absolute;left:68.18px;top:260.81px" class="cls_016"><span class="cls_016">Example:</span></div>
+<div style="position:absolute;left:68.18px;top:276.65px" class="cls_020"><span class="cls_020">Apex has master control over Phone B but not Phone A</span></div>
+<div style="position:absolute;left:54.02px;top:316.99px" class="cls_009"><span class="cls_009">1.4.  How to install Apex</span></div>
+<div style="position:absolute;left:61.10px;top:346.27px" class="cls_013"><span class="cls_013">Locating a suitable position for Apex</span></div>
+<div style="position:absolute;left:59.66px;top:372.55px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   Apex  should  be  placed  near  a  power  outlet  and</span></div>
+<div style="position:absolute;left:83.66px;top:388.39px" class="cls_016"><span class="cls_016">telephone line connection.</span></div>
+<div style="position:absolute;left:59.66px;top:413.11px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   Apex should be easily</span><span class="cls_015"> </span><span class="cls_016">accessible.</span></div>
+<div style="position:absolute;left:59.66px;top:434.95px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   Avoid damp locations, such as the bathroom.</span></div>
+<div style="position:absolute;left:59.66px;top:456.70px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   Do  not  place  Apex  near  heat  sources,  such  as  a</span></div>
+<div style="position:absolute;left:83.66px;top:472.54px" class="cls_016"><span class="cls_016">microwave, as this can reduce signal strength.</span></div>
+<div style="position:absolute;left:59.66px;top:494.38px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   Do not place Apex alongside other radio transmitting</span></div>
+<div style="position:absolute;left:83.66px;top:510.22px" class="cls_016"><span class="cls_016">devices, such as mobile phones, cordless phones, or</span></div>
+<div style="position:absolute;left:83.66px;top:526.06px" class="cls_016"><span class="cls_016">wireless computer network (Wi-Fi) devices.</span></div>
+<div style="position:absolute;left:204.31px;top:572.64px" class="cls_003"><span class="cls_003">7</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-198px;top:4354px;width:396px;height:612px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/background08.jpg" width=396 height=612></div>
+<div style="position:absolute;left:43.10px;top:56.90px" class="cls_013"><span class="cls_013">Mounting Apex</span></div>
+<div style="position:absolute;left:43.10px;top:83.18px" class="cls_016"><span class="cls_016">Apex can be mounted on the wall or placed flat wherever</span></div>
+<div style="position:absolute;left:43.10px;top:99.02px" class="cls_016"><span class="cls_016">desired (e.g. on a table). If mounted on a wall, ensure Apex</span></div>
+<div style="position:absolute;left:43.10px;top:114.86px" class="cls_016"><span class="cls_016">is fitted near chest height where the buttons, microphone and</span></div>
+<div style="position:absolute;left:43.10px;top:130.58px" class="cls_016"><span class="cls_016">speaker can be easily accessed and operated.</span></div>
+<div style="position:absolute;left:43.10px;top:152.42px" class="cls_015"><span class="cls_015">1. </span><span class="cls_016">Using the Wall Mounting Bracket as a template, mark off</span></div>
+<div style="position:absolute;left:57.38px;top:168.26px" class="cls_016"><span class="cls_016">two hole positions on the wall.</span></div>
+<div style="position:absolute;left:43.10px;top:190.13px" class="cls_015"><span class="cls_015">2. </span><span class="cls_016">Drill two holes and insert the wall plugs if the wall is plaster</span></div>
+<div style="position:absolute;left:57.38px;top:205.85px" class="cls_016"><span class="cls_016">or brick.</span></div>
+<div style="position:absolute;left:43.10px;top:227.69px" class="cls_015"><span class="cls_015">3. </span><span class="cls_016">Screw on the bracket to the wall.</span></div>
+<div style="position:absolute;left:43.10px;top:249.53px" class="cls_015"><span class="cls_015">4. </span><span class="cls_016">Hook Apex onto the bracket, with the front facing you.</span></div>
+<div style="position:absolute;left:43.10px;top:271.37px" class="cls_022"><span class="cls_022">Important:  When drilling into a wall, ensure  there are no</span></div>
+<div style="position:absolute;left:99.86px;top:285.65px" class="cls_022"><span class="cls_022">hidden cables or pipes.</span></div>
+<div style="position:absolute;left:41.66px;top:322.51px" class="cls_007"><span class="cls_007">2. </span><span class="cls_002">Operation</span></div>
+<div style="position:absolute;left:36.00px;top:357.55px" class="cls_009"><span class="cls_009">2.1.  Help Call Activation</span></div>
+<div style="position:absolute;left:43.10px;top:386.71px" class="cls_016"><span class="cls_016">Pressing the </span><span class="cls_006">HELP</span><span class="cls_016"> </span><span class="cls_006">BUTTON </span><span class="cls_016">on Apex, or the </span><span class="cls_006">EMERGENCY</span></div>
+<div style="position:absolute;left:43.10px;top:402.43px" class="cls_006"><span class="cls_006">BUTTON</span><span class="cls_016"> on the associated pendant will trigger a help alarm</span></div>
+<div style="position:absolute;left:43.10px;top:418.39px" class="cls_016"><span class="cls_016">call. When an alarm is triggered, a signal is sent to the</span></div>
+<div style="position:absolute;left:43.10px;top:434.23px" class="cls_016"><span class="cls_016">central monitoring station (CMS) and both the red LED light</span></div>
+<div style="position:absolute;left:43.10px;top:450.10px" class="cls_016"><span class="cls_016">and help button backlight will turn on. Apex will summon help</span></div>
+<div style="position:absolute;left:43.10px;top:465.82px" class="cls_016"><span class="cls_016">according   to   the   numbers   and   reporting   methods</span></div>
+<div style="position:absolute;left:43.10px;top:481.66px" class="cls_016"><span class="cls_016">programmed.</span></div>
+<div style="position:absolute;left:57.38px;top:503.50px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">  An alarm report can be canceled</span><span class="cls_015"> </span><span class="cls_016">by pressing the</span></div>
+<div style="position:absolute;left:78.62px;top:519.22px" class="cls_006"><span class="cls_006">RESET BUTTON</span><span class="cls_016"> on</span><span class="cls_015"> </span><span class="cls_016">Apex.</span></div>
+<div style="position:absolute;left:186.29px;top:572.64px" class="cls_003"><span class="cls_003">8</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-198px;top:4976px;width:396px;height:612px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/background09.jpg" width=396 height=612></div>
+<div style="position:absolute;left:75.38px;top:35.16px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">  Nano, Oval, and Pico can cancel the alarm it</span><span class="cls_015"> </span><span class="cls_016">started</span></div>
+<div style="position:absolute;left:96.62px;top:50.88px" class="cls_016"><span class="cls_016">by pressing and holding the </span><span class="cls_006">EMERGENCY BUTTON</span></div>
+<div style="position:absolute;left:96.62px;top:66.86px" class="cls_016"><span class="cls_016">for</span></div>
+<div style="position:absolute;left:115.49px;top:66.86px" class="cls_016"><span class="cls_016">8 seconds during the transmission time.</span></div>
+<div style="position:absolute;left:59.66px;top:110.42px" class="cls_042"><span class="cls_042">Voice Prompts During Help Call</span></div>
+<div style="position:absolute;left:59.66px;top:137.66px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   When the </span><span class="cls_006">HELP</span><span class="cls_016"> </span><span class="cls_006">BUTTON</span><span class="cls_016"> is pressed,</span><span class="cls_015"> </span><span class="cls_016">the voice prompt:</span></div>
+<div style="position:absolute;left:83.78px;top:153.50px" class="cls_024"><span class="cls_024">“Help call activated”</span><span class="cls_016"> will</span><span class="cls_015"> </span><span class="cls_016">play once.</span></div>
+<div style="position:absolute;left:59.66px;top:175.34px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   The prompt: </span><span class="cls_024">“Please wait, your help</span><span class="cls_025"> </span><span class="cls_024">call is in progress”</span></div>
+<div style="position:absolute;left:83.78px;top:191.09px" class="cls_016"><span class="cls_016">will play every 10 seconds during the transmission time.</span></div>
+<div style="position:absolute;left:59.66px;top:212.81px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   If the </span><span class="cls_006">RESET</span><span class="cls_016"> </span><span class="cls_006">BUTTON</span><span class="cls_016"> is pressed to cancel the call,</span><span class="cls_015"> </span><span class="cls_016">the</span></div>
+<div style="position:absolute;left:83.78px;top:228.77px" class="cls_016"><span class="cls_016">prompt: </span><span class="cls_024">“Help call cancelled” </span><span class="cls_016">will</span><span class="cls_015"> </span><span class="cls_016">play twice.</span></div>
+<div style="position:absolute;left:59.66px;top:250.61px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   Once the connection is made to any of the phone</span></div>
+<div style="position:absolute;left:83.78px;top:266.33px" class="cls_016"><span class="cls_016">numbers, the prompt: </span><span class="cls_024">“Help call received. You</span><span class="cls_025"> </span><span class="cls_024">are now</span></div>
+<div style="position:absolute;left:83.78px;top:282.17px" class="cls_024"><span class="cls_024">being connected”</span><span class="cls_016"> will play.</span></div>
+<div style="position:absolute;left:96.62px;top:325.75px" class="cls_013"><span class="cls_013">Help Arrived Confirmation Mode</span></div>
+<div style="position:absolute;left:61.10px;top:349.03px" class="cls_016"><span class="cls_016">After the two way voice communication session between the</span></div>
+<div style="position:absolute;left:61.10px;top:364.87px" class="cls_016"><span class="cls_016">user and all call recipients end, Help Arrived Mode will begin.</span></div>
+<div style="position:absolute;left:79.10px;top:386.71px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">  In this mode, a timer is set for ___ (1-10) minutes.</span></div>
+<div style="position:absolute;left:79.10px;top:408.55px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">  After </span><span class="cls_043">____</span><span class="cls_016"> minutes, the voice prompt “If help has</span></div>
+<div style="position:absolute;left:97.10px;top:424.39px" class="cls_016"><span class="cls_016">arrived, press the green reset button” will play every</span></div>
+<div style="position:absolute;left:97.10px;top:440.14px" class="cls_016"><span class="cls_016">minute (up to 15 minutes) until help arrives and has</span></div>
+<div style="position:absolute;left:97.10px;top:455.98px" class="cls_016"><span class="cls_016">been confirmed.</span></div>
+<div style="position:absolute;left:79.10px;top:477.82px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">  Either the user or the arrived assistance can press the</span></div>
+<div style="position:absolute;left:97.10px;top:493.54px" class="cls_006"><span class="cls_006">RESET</span><span class="cls_016"> </span><span class="cls_006">BUTTON</span><span class="cls_016"> to indicate to the CMS that help has</span></div>
+<div style="position:absolute;left:97.10px;top:509.38px" class="cls_016"><span class="cls_016">arrived.</span></div>
+<div style="position:absolute;left:79.10px;top:531.10px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">  If the timer expires before the </span><span class="cls_006">RESET</span><span class="cls_016"> </span><span class="cls_006">BUTTON</span><span class="cls_016"> is</span></div>
+<div style="position:absolute;left:204.31px;top:572.64px" class="cls_003"><span class="cls_003">9</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-198px;top:5598px;width:396px;height:612px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/background10.jpg" width=396 height=612></div>
+<div style="position:absolute;left:79.10px;top:35.16px" class="cls_016"><span class="cls_016">pressed, an additional signal will be sent to the CMS</span></div>
+<div style="position:absolute;left:79.10px;top:51.00px" class="cls_016"><span class="cls_016">indicating that “help has not arrived”. Your CMS will be</span></div>
+<div style="position:absolute;left:79.10px;top:66.86px" class="cls_016"><span class="cls_016">able to act accordingly.</span></div>
+<div style="position:absolute;left:36.00px;top:110.06px" class="cls_009"><span class="cls_009">2.2.  Standby Mode</span></div>
+<div style="position:absolute;left:41.66px;top:139.34px" class="cls_016"><span class="cls_016">When the system is in standby mode, Apex is ready to execute</span></div>
+<div style="position:absolute;left:41.66px;top:155.18px" class="cls_016"><span class="cls_016">the following functions:</span></div>
+<div style="position:absolute;left:78.62px;top:176.90px" class="cls_013"><span class="cls_013">Answering Incoming Phone Calls</span></div>
+<div style="position:absolute;left:50.18px;top:200.33px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">  When there is an incoming telephone call, Apex will emit</span></div>
+<div style="position:absolute;left:71.42px;top:216.05px" class="cls_016"><span class="cls_016">cycles of 2 quick beeps.</span></div>
+<div style="position:absolute;left:50.18px;top:237.77px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">  The user can answer the call by pressing the </span><span class="cls_006">HELP</span></div>
+<div style="position:absolute;left:71.42px;top:253.61px" class="cls_006"><span class="cls_006">BUTTON </span><span class="cls_016">on Apex or the </span><span class="cls_006">EMERGENCY BUTTON</span><span class="cls_016"> on</span></div>
+<div style="position:absolute;left:71.42px;top:269.57px" class="cls_016"><span class="cls_016">Nano, Oval or Pico.</span></div>
+<div style="position:absolute;left:50.18px;top:291.29px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">  Once   Apex   answers   the   call,   a   two-way   voice</span></div>
+<div style="position:absolute;left:71.42px;top:307.01px" class="cls_016"><span class="cls_016">communication session will begin. The </span><span class="cls_006">HELP BUTTON</span></div>
+<div style="position:absolute;left:71.42px;top:321.07px" class="cls_016"><span class="cls_016">backlight will light up.</span></div>
+<div style="position:absolute;left:50.18px;top:344.83px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">  The caller on the other line can press (6) or (4) on their</span></div>
+<div style="position:absolute;left:71.42px;top:360.55px" class="cls_016"><span class="cls_016">phone keypad to increase or decrease the levels of</span></div>
+<div style="position:absolute;left:71.42px;top:376.39px" class="cls_016"><span class="cls_016">speaker volume.</span></div>
+<div style="position:absolute;left:50.18px;top:398.11px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">  To end the call, press the </span><span class="cls_006">RESET</span><span class="cls_016"> </span><span class="cls_006">BUTTON</span><span class="cls_016"> on Apex or</span></div>
+<div style="position:absolute;left:71.42px;top:413.95px" class="cls_016"><span class="cls_016">press and hold the </span><span class="cls_006">EMERGENCY BUTTON</span><span class="cls_016"> on any of</span></div>
+<div style="position:absolute;left:71.42px;top:429.79px" class="cls_016"><span class="cls_016">the pendants for 5 - 8 seconds.</span></div>
+<div style="position:absolute;left:41.66px;top:451.54px" class="cls_006"><span class="cls_006">Notes:</span></div>
+<div style="position:absolute;left:54.02px;top:475.66px" class="cls_028"><span class="cls_028">- </span><span class="cls_016">  Speaker volume can only be adjusted during voice</span></div>
+<div style="position:absolute;left:72.02px;top:494.50px" class="cls_016"><span class="cls_016">sessions; the adjusted value will be kept the same for all</span></div>
+<div style="position:absolute;left:72.02px;top:510.34px" class="cls_016"><span class="cls_016">calls that follow.</span></div>
+<div style="position:absolute;left:183.41px;top:572.64px" class="cls_003"><span class="cls_003">10</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-198px;top:6220px;width:396px;height:612px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/background11.jpg" width=396 height=612></div>
+<div style="position:absolute;left:72.02px;top:34.92px" class="cls_028"><span class="cls_028">- </span><span class="cls_016">  Speaker volume levels range from 1 - 8. The default is</span></div>
+<div style="position:absolute;left:90.02px;top:50.64px" class="cls_016"><span class="cls_016">set at 5.</span></div>
+<div style="position:absolute;left:72.02px;top:71.54px" class="cls_028"><span class="cls_028">- </span><span class="cls_016">  The talk time for each phone call is set for ____ (1-10)</span></div>
+<div style="position:absolute;left:90.02px;top:87.26px" class="cls_016"><span class="cls_016">minutes.</span></div>
+<div style="position:absolute;left:96.62px;top:125.78px" class="cls_013"><span class="cls_013">Non-Emergency Speech Call</span></div>
+<div style="position:absolute;left:59.66px;top:149.18px" class="cls_029"><span class="cls_029">This feature is available only if enabled by your service provider.</span></div>
+<div style="position:absolute;left:59.66px;top:169.58px" class="cls_030"><span class="cls_030">Making a Non-emergency Call from Apex</span></div>
+<div style="position:absolute;left:77.66px;top:190.61px" class="cls_016"><span class="cls_016">1.</span></div>
+<div style="position:absolute;left:95.66px;top:190.61px" class="cls_016"><span class="cls_016">Press and hold the </span><span class="cls_006">RESET BUTTON</span><span class="cls_016"> for 3 seconds</span></div>
+<div style="position:absolute;left:95.66px;top:206.45px" class="cls_016"><span class="cls_016">until Apex emits a short beep.</span></div>
+<div style="position:absolute;left:77.66px;top:228.17px" class="cls_016"><span class="cls_016">2.</span></div>
+<div style="position:absolute;left:95.66px;top:228.17px" class="cls_016"><span class="cls_016">Release the </span><span class="cls_006">RESET BUTTON </span><span class="cls_016">and one short beep will</span></div>
+<div style="position:absolute;left:95.66px;top:244.13px" class="cls_016"><span class="cls_016">sound. Apex will dial the pre-programmed phone</span></div>
+<div style="position:absolute;left:95.66px;top:259.97px" class="cls_016"><span class="cls_016">number.</span></div>
+<div style="position:absolute;left:77.66px;top:281.81px" class="cls_016"><span class="cls_016">3.</span></div>
+<div style="position:absolute;left:95.66px;top:281.81px" class="cls_016"><span class="cls_016">If the dialing succeeds and the call is answered,</span></div>
+<div style="position:absolute;left:95.66px;top:297.53px" class="cls_016"><span class="cls_016">Apex will open a two-way voice communication</span></div>
+<div style="position:absolute;left:95.66px;top:313.39px" class="cls_016"><span class="cls_016">session between the call recipient and Apex.</span></div>
+<div style="position:absolute;left:95.66px;top:335.23px" class="cls_016"><span class="cls_016">The call session will last for ____ minutes</span></div>
+<div style="position:absolute;left:95.66px;top:351.07px" class="cls_016"><span class="cls_016">(programmable from 1 - 10 min).</span></div>
+<div style="position:absolute;left:95.66px;top:366.79px" class="cls_016"><span class="cls_016">The help button backlight will light up.</span></div>
+<div style="position:absolute;left:108.02px;top:388.63px" class="cls_031"><span class="cls_031">o</span><span class="cls_016">   If the dialing fails, Apex will not re-dial.</span></div>
+<div style="position:absolute;left:108.02px;top:410.35px" class="cls_031"><span class="cls_031">o</span><span class="cls_016">   Press the </span><span class="cls_006">RESET BUTTON</span><span class="cls_016"> anytime to end</span></div>
+<div style="position:absolute;left:126.05px;top:426.31px" class="cls_016"><span class="cls_016">the call or cancel the dialing.</span></div>
+<div style="position:absolute;left:77.66px;top:448.06px" class="cls_016"><span class="cls_016">4.</span></div>
+<div style="position:absolute;left:95.66px;top:448.06px" class="cls_016"><span class="cls_016">During the last 20 and 10 seconds of the remaining</span></div>
+<div style="position:absolute;left:95.66px;top:463.90px" class="cls_016"><span class="cls_016">call time, Apex will emit two warning beeps via the</span></div>
+<div style="position:absolute;left:95.66px;top:479.74px" class="cls_016"><span class="cls_016">telephone handset. To add more talk time, the call</span></div>
+<div style="position:absolute;left:95.66px;top:495.58px" class="cls_016"><span class="cls_016">recipient can press any number (except 9) on their</span></div>
+<div style="position:absolute;left:95.66px;top:511.30px" class="cls_016"><span class="cls_016">telephone keypad to add another _____ minutes of</span></div>
+<div style="position:absolute;left:95.66px;top:527.14px" class="cls_016"><span class="cls_016">talk time (programmable from 1 - 10) minutes.</span></div>
+<div style="position:absolute;left:201.43px;top:572.64px" class="cls_003"><span class="cls_003">11</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-198px;top:6842px;width:396px;height:612px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/background12.jpg" width=396 height=612></div>
+<div style="position:absolute;left:59.66px;top:35.04px" class="cls_016"><span class="cls_016">5.  To end the call: the user can press the </span><span class="cls_006">RESET</span></div>
+<div style="position:absolute;left:77.66px;top:50.88px" class="cls_006"><span class="cls_006">BUTTON</span><span class="cls_016"> or the call recipient can press (9) on their</span></div>
+<div style="position:absolute;left:77.66px;top:66.86px" class="cls_016"><span class="cls_016">telephone keypad.</span></div>
+<div style="position:absolute;left:78.62px;top:108.86px" class="cls_013"><span class="cls_013">AC Power Check Up</span></div>
+<div style="position:absolute;left:41.66px;top:132.26px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   If a power failure is detected for 10</span><span class="cls_015"> </span><span class="cls_016">seconds or longer,</span></div>
+<div style="position:absolute;left:65.66px;top:148.10px" class="cls_016"><span class="cls_016">the green LED light will flash to visually warn the user.</span></div>
+<div style="position:absolute;left:65.66px;top:163.82px" class="cls_016"><span class="cls_016">The  voice  prompt:</span></div>
+<div style="position:absolute;left:169.13px;top:163.82px" class="cls_024"><span class="cls_024">“Power  failure.  Check  the  power</span></div>
+<div style="position:absolute;left:65.66px;top:179.66px" class="cls_024"><span class="cls_024">connection”</span><span class="cls_016"> will play twice every 2-3 seconds.</span></div>
+<div style="position:absolute;left:41.66px;top:201.53px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   Once power is restored, the green LED light will stop</span></div>
+<div style="position:absolute;left:65.66px;top:217.37px" class="cls_016"><span class="cls_016">flashing. The prompt: </span><span class="cls_024">“Power restored”</span><span class="cls_016"> will play once.</span></div>
+<div style="position:absolute;left:41.66px;top:239.09px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   If the power failure lasts for over one hour, Apex will send</span></div>
+<div style="position:absolute;left:65.66px;top:254.93px" class="cls_016"><span class="cls_016">an AC failure report to the CMS.</span></div>
+<div style="position:absolute;left:41.66px;top:276.77px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   One hour after the power is restored, Apex will send an</span></div>
+<div style="position:absolute;left:65.66px;top:292.61px" class="cls_016"><span class="cls_016">AC Restore report to the CMS.</span></div>
+<div style="position:absolute;left:78.62px;top:336.07px" class="cls_013"><span class="cls_013">Apex Low Battery</span></div>
+<div style="position:absolute;left:41.78px;top:359.47px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">  Apex cannot detect its battery condition within the first 30</span></div>
+<div style="position:absolute;left:64.34px;top:375.31px" class="cls_016"><span class="cls_016">minutes after powering up.</span></div>
+<div style="position:absolute;left:41.66px;top:397.03px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   If Apex experiences low battery for 4 - 6 minutes, the</span></div>
+<div style="position:absolute;left:64.34px;top:412.87px" class="cls_016"><span class="cls_016">base unit will report to the CMS and the green LED light</span></div>
+<div style="position:absolute;left:64.34px;top:428.71px" class="cls_016"><span class="cls_016">will flash slowly.</span></div>
+<div style="position:absolute;left:41.66px;top:450.58px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   The voice prompt:</span><span class="cls_024"> “Low base unit battery”</span><span class="cls_016"> will play 3 times</span></div>
+<div style="position:absolute;left:64.34px;top:466.30px" class="cls_016"><span class="cls_016">every 10 minutes. The voice prompt will play every day</span></div>
+<div style="position:absolute;left:64.34px;top:482.14px" class="cls_016"><span class="cls_016">until the battery is replaced.</span></div>
+<div style="position:absolute;left:41.66px;top:503.98px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   After the battery is replaced and this status lasts for 12</span></div>
+<div style="position:absolute;left:64.34px;top:519.82px" class="cls_016"><span class="cls_016">hours, Apex will send a ‘Battery Restored’ report to the</span></div>
+<div style="position:absolute;left:183.41px;top:572.64px" class="cls_003"><span class="cls_003">12</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-198px;top:7464px;width:396px;height:612px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/background13.jpg" width=396 height=612></div>
+<div style="position:absolute;left:82.34px;top:35.16px" class="cls_016"><span class="cls_016">CMS and the green LED light will stop flashing. The voice</span></div>
+<div style="position:absolute;left:82.34px;top:51.00px" class="cls_016"><span class="cls_016">prompt: </span><span class="cls_024">“Base unit battery restored”</span><span class="cls_016"> will play.</span></div>
+<div style="position:absolute;left:96.62px;top:93.02px" class="cls_013"><span class="cls_013">Apex Battery Disconnection</span></div>
+<div style="position:absolute;left:68.18px;top:118.34px" class="cls_016"><span class="cls_016">Apex can detect the absence of battery when:</span></div>
+<div style="position:absolute;left:107.66px;top:140.18px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   The battery switch is OFF</span></div>
+<div style="position:absolute;left:107.66px;top:161.90px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   The battery not connected</span></div>
+<div style="position:absolute;left:107.66px;top:183.77px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   There is a battery failure</span></div>
+<div style="position:absolute;left:59.66px;top:205.68px" class="cls_021"><span class="cls_021"></span></div>
+<div style="position:absolute;left:82.34px;top:205.61px" class="cls_016"><span class="cls_016">When the battery is disconnected for 15 minutes, Apex</span></div>
+<div style="position:absolute;left:82.34px;top:221.45px" class="cls_016"><span class="cls_016">will report to the CMS and the green LED light will flash</span></div>
+<div style="position:absolute;left:82.34px;top:237.17px" class="cls_016"><span class="cls_016">slowly.</span></div>
+<div style="position:absolute;left:59.78px;top:259.08px" class="cls_021"><span class="cls_021"></span></div>
+<div style="position:absolute;left:82.34px;top:259.01px" class="cls_016"><span class="cls_016">The  blinking  status  of  the green LED light  can  be</span></div>
+<div style="position:absolute;left:82.34px;top:274.73px" class="cls_016"><span class="cls_016">cleared by pressing the </span><span class="cls_006">RESET</span><span class="cls_016"> </span><span class="cls_006">BUTTON</span><span class="cls_016">.</span></div>
+<div style="position:absolute;left:59.78px;top:296.76px" class="cls_021"><span class="cls_021"></span></div>
+<div style="position:absolute;left:82.34px;top:296.69px" class="cls_016"><span class="cls_016">After the battery connection is restored and it lasts for 15</span></div>
+<div style="position:absolute;left:82.34px;top:312.43px" class="cls_016"><span class="cls_016">minutes, Apex will send a ‘Battery Restored’ report to the</span></div>
+<div style="position:absolute;left:82.34px;top:328.27px" class="cls_016"><span class="cls_016">CMS and the green LED light will stop flashing.</span></div>
+<div style="position:absolute;left:96.62px;top:349.99px" class="cls_013"><span class="cls_013">Device Low Battery</span></div>
+<div style="position:absolute;left:59.78px;top:373.46px" class="cls_021"><span class="cls_021"></span></div>
+<div style="position:absolute;left:82.34px;top:373.39px" class="cls_016"><span class="cls_016">When  Apex  receives  a  battery  low   signal  from  a</span></div>
+<div style="position:absolute;left:82.34px;top:389.11px" class="cls_016"><span class="cls_016">particular device, it will report to the CMS and the green</span></div>
+<div style="position:absolute;left:82.34px;top:404.95px" class="cls_016"><span class="cls_016">LED light will flash rapidly until the battery is replaced.</span></div>
+<div style="position:absolute;left:59.78px;top:426.86px" class="cls_021"><span class="cls_021"></span></div>
+<div style="position:absolute;left:85.46px;top:426.79px" class="cls_016"><span class="cls_016">After   the   device   battery   is   replaced,   Apex   will</span></div>
+<div style="position:absolute;left:82.34px;top:442.66px" class="cls_016"><span class="cls_016">immediately send a ‘Battery Restored’ report to the CMS</span></div>
+<div style="position:absolute;left:82.34px;top:457.54px" class="cls_016"><span class="cls_016">for the particular device.</span></div>
+<div style="position:absolute;left:96.62px;top:500.50px" class="cls_013"><span class="cls_013">Periodic Test Report</span></div>
+<div style="position:absolute;left:61.10px;top:517.90px" class="cls_016"><span class="cls_016">When   Apex   is   programmed  to   send   a   periodic   test</span></div>
+<div style="position:absolute;left:201.43px;top:572.64px" class="cls_003"><span class="cls_003">13</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-198px;top:8086px;width:396px;height:612px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/background14.jpg" width=396 height=612></div>
+<div style="position:absolute;left:43.10px;top:35.16px" class="cls_016"><span class="cls_016">transmission, Apex will report the CMS accordingly.</span></div>
+<div style="position:absolute;left:43.10px;top:57.02px" class="cls_016"><span class="cls_016">The Periodic Test Timer will be reset whenever programming</span></div>
+<div style="position:absolute;left:43.10px;top:72.86px" class="cls_016"><span class="cls_016">mode is entered.</span></div>
+<div style="position:absolute;left:78.62px;top:114.86px" class="cls_013"><span class="cls_013">Inactivity Monitoring</span></div>
+<div style="position:absolute;left:43.10px;top:138.26px" class="cls_016"><span class="cls_016">In order to check the user’s wellbeing, Inactivity Monitoring</span></div>
+<div style="position:absolute;left:43.10px;top:153.98px" class="cls_016"><span class="cls_016">(from 1 to 24 hours) can be programmed by your service</span></div>
+<div style="position:absolute;left:43.10px;top:169.82px" class="cls_016"><span class="cls_016">provider.</span></div>
+<div style="position:absolute;left:43.10px;top:191.69px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">  If the Inactivity Timer is set, a countdown period will start</span></div>
+<div style="position:absolute;left:64.34px;top:207.41px" class="cls_016"><span class="cls_016">immediately after Apex is turned on or when the base unit</span></div>
+<div style="position:absolute;left:64.34px;top:223.25px" class="cls_016"><span class="cls_016">exits from the programming mode.</span></div>
+<div style="position:absolute;left:44.42px;top:245.09px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">  After the expiry of preprogramed time period or if Apex</span></div>
+<div style="position:absolute;left:65.66px;top:260.93px" class="cls_016"><span class="cls_016">does not receive a signal from a system motion detector,</span></div>
+<div style="position:absolute;left:65.66px;top:276.65px" class="cls_016"><span class="cls_016">the voice prompt: </span><span class="cls_024">“Inactivity alert. Press the reset button</span></div>
+<div style="position:absolute;left:65.66px;top:292.49px" class="cls_024"><span class="cls_024">to check in”</span><span class="cls_016"> will play 7 times every 5 minutes.</span></div>
+<div style="position:absolute;left:43.10px;top:314.23px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">  If the </span><span class="cls_006">RESET BUTTON</span><span class="cls_016"> is not pressed within 30 minutes,</span></div>
+<div style="position:absolute;left:64.34px;top:330.19px" class="cls_016"><span class="cls_016">an Inactivity Timer Expired report is sent to the CMS.</span></div>
+<div style="position:absolute;left:43.10px;top:352.03px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">  The Inactivity Timer can be reset through the following</span></div>
+<div style="position:absolute;left:64.34px;top:367.75px" class="cls_016"><span class="cls_016">ways:</span></div>
+<div style="position:absolute;left:71.42px;top:389.47px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">  Press the </span><span class="cls_006">RESET BUTTON</span><span class="cls_016"> on Apex</span></div>
+<div style="position:absolute;left:71.42px;top:411.31px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">  Press the </span><span class="cls_006">EMERGENCY</span><span class="cls_016"> </span><span class="cls_006">BUTTON</span><span class="cls_016"> on any pendant</span></div>
+<div style="position:absolute;left:89.90px;top:427.27px" class="cls_016"><span class="cls_016">(Nano, Oval, Echo)</span></div>
+<div style="position:absolute;left:71.42px;top:449.02px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">  Movement is detected by a Wave Motion Detector</span></div>
+<div style="position:absolute;left:36.00px;top:491.14px" class="cls_006"><span class="cls_006">To disable the Inactivity Monitoring:</span></div>
+<div style="position:absolute;left:66.02px;top:513.11px" class="cls_015"><span class="cls_015">1.</span></div>
+<div style="position:absolute;left:89.78px;top:512.98px" class="cls_016"><span class="cls_016">Press and hold the </span><span class="cls_006">RESET BUTTON</span><span class="cls_016"> on</span><span class="cls_015"> </span><span class="cls_016">Apex for</span></div>
+<div style="position:absolute;left:89.90px;top:528.82px" class="cls_016"><span class="cls_016">16 seconds.</span></div>
+<div style="position:absolute;left:183.41px;top:572.64px" class="cls_003"><span class="cls_003">14</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-198px;top:8708px;width:396px;height:612px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/background15.jpg" width=396 height=612></div>
+<div style="position:absolute;left:84.02px;top:35.30px" class="cls_015"><span class="cls_015">2.</span></div>
+<div style="position:absolute;left:107.78px;top:35.16px" class="cls_016"><span class="cls_016">During the 16-second period, Apex will emit one</span></div>
+<div style="position:absolute;left:107.90px;top:51.00px" class="cls_016"><span class="cls_016">short beep followed by a double beep.</span></div>
+<div style="position:absolute;left:84.02px;top:73.00px" class="cls_015"><span class="cls_015">3.</span></div>
+<div style="position:absolute;left:107.78px;top:72.86px" class="cls_016"><span class="cls_016">After the button is released, a long beep will indicate</span></div>
+<div style="position:absolute;left:107.90px;top:88.58px" class="cls_016"><span class="cls_016">that inactivity monitoring has been disabled.</span></div>
+<div style="position:absolute;left:72.02px;top:110.18px" class="cls_028"><span class="cls_028">- </span><span class="cls_016">  Press the </span><span class="cls_006">RESET BUTTON</span><span class="cls_016"> once to re-enable inactivity</span></div>
+<div style="position:absolute;left:90.02px;top:129.02px" class="cls_016"><span class="cls_016">monitoring.</span></div>
+<div style="position:absolute;left:96.62px;top:172.58px" class="cls_013"><span class="cls_013">High/Low Temperature Detection</span></div>
+<div style="position:absolute;left:59.66px;top:197.69px" class="cls_016"><span class="cls_016">Apex has a built-in temperature sensor for detecting high and</span></div>
+<div style="position:absolute;left:59.66px;top:213.41px" class="cls_016"><span class="cls_016">low temperatures:</span></div>
+<div style="position:absolute;left:59.66px;top:236.81px" class="cls_006"><span class="cls_006">The High temperature threshold is set at 35</span><span class="cls_032">°</span><span class="cls_006">C</span></div>
+<div style="position:absolute;left:59.66px;top:253.37px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   When the room temperature exceeds 35</span><span class="cls_033">°</span><span class="cls_016"> C</span><span class="cls_015"> </span><span class="cls_016">for over a</span></div>
+<div style="position:absolute;left:82.34px;top:269.21px" class="cls_016"><span class="cls_016">minute, Apex will report to the CMS and play the voice</span></div>
+<div style="position:absolute;left:82.34px;top:285.05px" class="cls_016"><span class="cls_016">prompt: </span><span class="cls_024">“Warning, room temperature is too high”</span><span class="cls_016"> every</span></div>
+<div style="position:absolute;left:82.34px;top:300.77px" class="cls_016"><span class="cls_016">10 minutes for an hour.</span></div>
+<div style="position:absolute;left:59.66px;top:322.63px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   When the room temperature falls under 35</span><span class="cls_033">°</span><span class="cls_016">C for over a</span></div>
+<div style="position:absolute;left:82.34px;top:338.47px" class="cls_016"><span class="cls_016">minute, Apex will send a restoral report to the CMS.</span></div>
+<div style="position:absolute;left:54.02px;top:360.19px" class="cls_006"><span class="cls_006">The Low temperature threshold is set at 10</span><span class="cls_032">°</span><span class="cls_006">C</span></div>
+<div style="position:absolute;left:59.66px;top:376.63px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   When the room temperature drops below 10</span><span class="cls_033">°</span><span class="cls_016"> C</span><span class="cls_015"> </span><span class="cls_016">for over</span></div>
+<div style="position:absolute;left:82.34px;top:392.47px" class="cls_016"><span class="cls_016">a minute, Apex will report to the CMS and play the voice</span></div>
+<div style="position:absolute;left:82.34px;top:408.31px" class="cls_016"><span class="cls_016">prompt: </span><span class="cls_024">“Warning, room temperature is too low” </span><span class="cls_016">every 10</span></div>
+<div style="position:absolute;left:82.34px;top:424.15px" class="cls_016"><span class="cls_016">minutes for an hour.</span></div>
+<div style="position:absolute;left:59.66px;top:445.90px" class="cls_021"><span class="cls_021"></span><span class="cls_015"> </span><span class="cls_016">   When the room temperature rises above 10</span><span class="cls_033">°</span><span class="cls_016">C for over a</span></div>
+<div style="position:absolute;left:82.34px;top:461.74px" class="cls_016"><span class="cls_016">minute, Apex will send a restoral report to the CMS.</span></div>
+<div style="position:absolute;left:201.43px;top:572.64px" class="cls_003"><span class="cls_003">15</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-198px;top:9330px;width:396px;height:612px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/background16.jpg" width=396 height=612></div>
+<div style="position:absolute;left:41.66px;top:34.56px" class="cls_007"><span class="cls_007">3. </span><span class="cls_002">Appendix</span></div>
+<div style="position:absolute;left:36.00px;top:69.62px" class="cls_009"><span class="cls_009">3.1.</span></div>
+<div style="position:absolute;left:72.86px;top:69.62px" class="cls_009"><span class="cls_009">Apex Voice Prompts</span></div>
+<div style="position:absolute;left:49.10px;top:94.94px" class="cls_022"><span class="cls_022">No.</span></div>
+<div style="position:absolute;left:91.46px;top:94.94px" class="cls_022"><span class="cls_022">Voice Prompt</span></div>
+<div style="position:absolute;left:234.79px;top:94.94px" class="cls_022"><span class="cls_022">Condition</span></div>
+<div style="position:absolute;left:188.33px;top:111.50px" class="cls_020"><span class="cls_020">Help button is pressed.</span></div>
+<div style="position:absolute;left:54.26px;top:118.82px" class="cls_022"><span class="cls_022">1</span></div>
+<div style="position:absolute;left:78.26px;top:118.94px" class="cls_020"><span class="cls_020">Help call activated.</span></div>
+<div style="position:absolute;left:188.33px;top:125.78px" class="cls_029"><span class="cls_029">Played once</span></div>
+<div style="position:absolute;left:78.26px;top:144.62px" class="cls_020"><span class="cls_020">Please wait. Your</span></div>
+<div style="position:absolute;left:188.33px;top:141.14px" class="cls_003"><span class="cls_003">Transmission time delay period</span></div>
+<div style="position:absolute;left:54.26px;top:158.90px" class="cls_022"><span class="cls_022">2</span></div>
+<div style="position:absolute;left:78.26px;top:159.02px" class="cls_020"><span class="cls_020">help call is in</span></div>
+<div style="position:absolute;left:188.33px;top:155.66px" class="cls_003"><span class="cls_003">after help call activation.</span></div>
+<div style="position:absolute;left:78.26px;top:173.42px" class="cls_020"><span class="cls_020">progress.</span></div>
+<div style="position:absolute;left:188.33px;top:170.18px" class="cls_034"><span class="cls_034">Played every 10 seconds</span></div>
+<div style="position:absolute;left:188.33px;top:194.93px" class="cls_020"><span class="cls_020">Reset button is pressed during</span></div>
+<div style="position:absolute;left:54.26px;top:209.09px" class="cls_022"><span class="cls_022">3</span></div>
+<div style="position:absolute;left:78.26px;top:209.21px" class="cls_020"><span class="cls_020">Help call cancelled.</span></div>
+<div style="position:absolute;left:188.33px;top:209.21px" class="cls_020"><span class="cls_020">reporting.</span></div>
+<div style="position:absolute;left:188.33px;top:223.49px" class="cls_029"><span class="cls_029">Played twice</span></div>
+<div style="position:absolute;left:78.26px;top:244.73px" class="cls_020"><span class="cls_020">Help call received.</span></div>
+<div style="position:absolute;left:188.33px;top:244.73px" class="cls_020"><span class="cls_020">Base unit opens communication</span></div>
+<div style="position:absolute;left:54.26px;top:258.89px" class="cls_022"><span class="cls_022">4</span></div>
+<div style="position:absolute;left:78.26px;top:259.01px" class="cls_020"><span class="cls_020">You are now being</span></div>
+<div style="position:absolute;left:188.33px;top:259.01px" class="cls_020"><span class="cls_020">with the CMS.</span></div>
+<div style="position:absolute;left:78.26px;top:273.41px" class="cls_020"><span class="cls_020">connected.</span></div>
+<div style="position:absolute;left:188.33px;top:273.29px" class="cls_029"><span class="cls_029">Played once</span></div>
+<div style="position:absolute;left:78.26px;top:294.53px" class="cls_020"><span class="cls_020">Phone line problem.</span></div>
+<div style="position:absolute;left:188.33px;top:294.53px" class="cls_020"><span class="cls_020">Telephone line unplugged or</span></div>
+<div style="position:absolute;left:54.26px;top:308.69px" class="cls_022"><span class="cls_022">5</span></div>
+<div style="position:absolute;left:78.26px;top:308.81px" class="cls_020"><span class="cls_020">Check your</span></div>
+<div style="position:absolute;left:188.33px;top:308.81px" class="cls_020"><span class="cls_020">disconnected.</span></div>
+<div style="position:absolute;left:78.26px;top:323.23px" class="cls_020"><span class="cls_020">connection.</span></div>
+<div style="position:absolute;left:188.33px;top:323.11px" class="cls_029"><span class="cls_029">Played twice every day</span></div>
+<div style="position:absolute;left:188.33px;top:344.35px" class="cls_020"><span class="cls_020">Telephone line is reconnected</span></div>
+<div style="position:absolute;left:78.26px;top:351.55px" class="cls_020"><span class="cls_020">Phone line</span></div>
+<div style="position:absolute;left:54.26px;top:358.63px" class="cls_022"><span class="cls_022">6</span></div>
+<div style="position:absolute;left:188.33px;top:358.75px" class="cls_020"><span class="cls_020">to the base unit.</span></div>
+<div style="position:absolute;left:78.26px;top:365.95px" class="cls_020"><span class="cls_020">connection restored.</span></div>
+<div style="position:absolute;left:188.33px;top:373.03px" class="cls_029"><span class="cls_029">Played once</span></div>
+<div style="position:absolute;left:78.26px;top:393.91px" class="cls_020"><span class="cls_020">Power failure. Check</span></div>
+<div style="position:absolute;left:188.33px;top:400.99px" class="cls_020"><span class="cls_020">AC power failure occurs.</span></div>
+<div style="position:absolute;left:54.26px;top:408.07px" class="cls_022"><span class="cls_022">7</span></div>
+<div style="position:absolute;left:78.26px;top:408.19px" class="cls_020"><span class="cls_020">the power</span></div>
+<div style="position:absolute;left:188.33px;top:415.27px" class="cls_029"><span class="cls_029">Played twice</span></div>
+<div style="position:absolute;left:78.26px;top:422.59px" class="cls_020"><span class="cls_020">connection.</span></div>
+<div style="position:absolute;left:188.33px;top:440.26px" class="cls_020"><span class="cls_020">AC power is restored.</span></div>
+<div style="position:absolute;left:54.26px;top:446.98px" class="cls_022"><span class="cls_022">8</span></div>
+<div style="position:absolute;left:78.26px;top:447.10px" class="cls_020"><span class="cls_020">Power restored.</span></div>
+<div style="position:absolute;left:188.33px;top:454.54px" class="cls_029"><span class="cls_029">Played once</span></div>
+<div style="position:absolute;left:78.26px;top:476.26px" class="cls_020"><span class="cls_020">Inactivity alert. Press</span></div>
+<div style="position:absolute;left:188.33px;top:483.46px" class="cls_020"><span class="cls_020">Inactivity timer expires.</span></div>
+<div style="position:absolute;left:54.26px;top:490.54px" class="cls_022"><span class="cls_022">9</span></div>
+<div style="position:absolute;left:78.26px;top:490.66px" class="cls_020"><span class="cls_020">the reset button to</span></div>
+<div style="position:absolute;left:188.33px;top:497.74px" class="cls_029"><span class="cls_029">Played 7 times every 5 minutes</span></div>
+<div style="position:absolute;left:78.26px;top:505.06px" class="cls_020"><span class="cls_020">check in.</span></div>
+<div style="position:absolute;left:183.41px;top:572.64px" class="cls_003"><span class="cls_003">16</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-198px;top:9952px;width:396px;height:612px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/background17.jpg" width=396 height=612></div>
+<div style="position:absolute;left:206.35px;top:39.24px" class="cls_020"><span class="cls_020">Transmission delay period after</span></div>
+<div style="position:absolute;left:70.46px;top:53.52px" class="cls_022"><span class="cls_022">10</span></div>
+<div style="position:absolute;left:96.26px;top:53.64px" class="cls_020"><span class="cls_020">A fall is detected.</span></div>
+<div style="position:absolute;left:206.35px;top:53.64px" class="cls_020"><span class="cls_020">a help call triggered by Oval.</span></div>
+<div style="position:absolute;left:206.35px;top:67.82px" class="cls_029"><span class="cls_029">Played every 2-3 seconds</span></div>
+<div style="position:absolute;left:96.26px;top:89.42px" class="cls_020"><span class="cls_020">Fall detection</span></div>
+<div style="position:absolute;left:206.35px;top:96.62px" class="cls_020"><span class="cls_020">Oval’s alarm is cancelled.</span></div>
+<div style="position:absolute;left:70.46px;top:103.58px" class="cls_022"><span class="cls_022">11</span></div>
+<div style="position:absolute;left:96.26px;top:103.70px" class="cls_020"><span class="cls_020">cancelled. Cancelling</span></div>
+<div style="position:absolute;left:206.35px;top:110.90px" class="cls_029"><span class="cls_029">Played once</span></div>
+<div style="position:absolute;left:96.26px;top:118.10px" class="cls_020"><span class="cls_020">help call.</span></div>
+<div style="position:absolute;left:206.35px;top:136.10px" class="cls_020"><span class="cls_020">Apex battery voltage is low.</span></div>
+<div style="position:absolute;left:206.35px;top:150.26px" class="cls_029"><span class="cls_029">Played 3 times every 10</span></div>
+<div style="position:absolute;left:70.46px;top:155.42px" class="cls_022"><span class="cls_022">12</span></div>
+<div style="position:absolute;left:96.26px;top:155.54px" class="cls_020"><span class="cls_020">Low base unit battery</span></div>
+<div style="position:absolute;left:206.35px;top:164.66px" class="cls_029"><span class="cls_029">minutes</span></div>
+<div style="position:absolute;left:206.35px;top:179.06px" class="cls_029"><span class="cls_029">Resumes every day</span></div>
+<div style="position:absolute;left:96.26px;top:190.01px" class="cls_020"><span class="cls_020">Base unit battery</span></div>
+<div style="position:absolute;left:206.35px;top:190.13px" class="cls_020"><span class="cls_020">Apex battery voltage is restored.</span></div>
+<div style="position:absolute;left:70.46px;top:197.09px" class="cls_022"><span class="cls_022">13</span></div>
+<div style="position:absolute;left:96.26px;top:204.41px" class="cls_020"><span class="cls_020">restored.</span></div>
+<div style="position:absolute;left:206.35px;top:204.41px" class="cls_029"><span class="cls_029">Played once</span></div>
+<div style="position:absolute;left:206.35px;top:222.41px" class="cls_020"><span class="cls_020">Room temperature drops below</span></div>
+<div style="position:absolute;left:96.26px;top:226.25px" class="cls_020"><span class="cls_020">Warning, room</span></div>
+<div style="position:absolute;left:206.35px;top:237.17px" class="cls_020"><span class="cls_020">10</span><span class="cls_035">∘</span><span class="cls_020">C.</span></div>
+<div style="position:absolute;left:70.46px;top:240.53px" class="cls_022"><span class="cls_022">14</span></div>
+<div style="position:absolute;left:96.26px;top:240.65px" class="cls_020"><span class="cls_020">temperature is too</span></div>
+<div style="position:absolute;left:96.26px;top:254.93px" class="cls_020"><span class="cls_020">low</span></div>
+<div style="position:absolute;left:206.35px;top:258.65px" class="cls_029"><span class="cls_029">Played 7 times every 10 minutes</span></div>
+<div style="position:absolute;left:206.35px;top:279.65px" class="cls_020"><span class="cls_020">Room temperature exceeds</span></div>
+<div style="position:absolute;left:96.26px;top:283.49px" class="cls_020"><span class="cls_020">Warning, room</span></div>
+<div style="position:absolute;left:206.35px;top:294.41px" class="cls_020"><span class="cls_020">35</span><span class="cls_035">∘</span><span class="cls_020">C.</span></div>
+<div style="position:absolute;left:70.46px;top:297.77px" class="cls_022"><span class="cls_022">15</span></div>
+<div style="position:absolute;left:96.26px;top:297.89px" class="cls_020"><span class="cls_020">temperature is too</span></div>
+<div style="position:absolute;left:96.26px;top:312.19px" class="cls_020"><span class="cls_020">high</span></div>
+<div style="position:absolute;left:206.35px;top:315.91px" class="cls_029"><span class="cls_029">Played 7 times every 10 minutes</span></div>
+<div style="position:absolute;left:206.35px;top:337.39px" class="cls_020"><span class="cls_020">Monthly reminder to test your</span></div>
+<div style="position:absolute;left:96.26px;top:347.59px" class="cls_020"><span class="cls_020">Press the HELP</span></div>
+<div style="position:absolute;left:206.35px;top:351.79px" class="cls_020"><span class="cls_020">system.</span></div>
+<div style="position:absolute;left:70.46px;top:361.87px" class="cls_022"><span class="cls_022">16</span></div>
+<div style="position:absolute;left:96.26px;top:361.99px" class="cls_020"><span class="cls_020">button to test your</span></div>
+<div style="position:absolute;left:206.35px;top:372.07px" class="cls_029"><span class="cls_029">Played every 10 days after</span></div>
+<div style="position:absolute;left:96.26px;top:376.39px" class="cls_020"><span class="cls_020">system.</span></div>
+<div style="position:absolute;left:206.35px;top:386.35px" class="cls_029"><span class="cls_029">applying AC power</span></div>
+<div style="position:absolute;left:206.35px;top:407.47px" class="cls_020"><span class="cls_020">___ minutes after alarm</span></div>
+<div style="position:absolute;left:96.26px;top:421.87px" class="cls_020"><span class="cls_020">If help has arrived,</span></div>
+<div style="position:absolute;left:206.35px;top:421.75px" class="cls_020"><span class="cls_020">reporting is completed (If Help</span></div>
+<div style="position:absolute;left:70.46px;top:436.15px" class="cls_022"><span class="cls_022">17</span></div>
+<div style="position:absolute;left:96.26px;top:436.27px" class="cls_020"><span class="cls_020">press the green</span></div>
+<div style="position:absolute;left:206.35px;top:436.15px" class="cls_020"><span class="cls_020">Arrived function is enabled)</span></div>
+<div style="position:absolute;left:96.26px;top:450.58px" class="cls_020"><span class="cls_020">reset button.</span></div>
+<div style="position:absolute;left:206.35px;top:450.58px" class="cls_029"><span class="cls_029">Played every minute up to 15</span></div>
+<div style="position:absolute;left:206.35px;top:464.98px" class="cls_029"><span class="cls_029">minutes</span></div>
+<div style="position:absolute;left:201.43px;top:572.64px" class="cls_003"><span class="cls_003">17</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-198px;top:10574px;width:396px;height:612px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/background18.jpg" width=396 height=612></div>
+<div style="position:absolute;left:41.66px;top:35.28px" class="cls_036"><span class="cls_036">Epic Safety Products Limited 1 Year Warranty</span></div>
+<div style="position:absolute;left:36.00px;top:50.28px" class="cls_037"><span class="cls_037">Subject to the limitations set forth herein, Epic Safety Inc. (Epic) warrants that</span></div>
+<div style="position:absolute;left:36.00px;top:62.18px" class="cls_037"><span class="cls_037">the Products sold by it to its authorized Distributors shall be free, under normal</span></div>
+<div style="position:absolute;left:36.00px;top:74.18px" class="cls_037"><span class="cls_037">use and service, from defects in material and workmanship for a period of</span></div>
+<div style="position:absolute;left:36.00px;top:86.06px" class="cls_037"><span class="cls_037">twelve  months</span></div>
+<div style="position:absolute;left:103.01px;top:86.06px" class="cls_037"><span class="cls_037">(12)  months  from  the  date  of  purchase.  The  Products</span></div>
+<div style="position:absolute;left:36.00px;top:97.94px" class="cls_037"><span class="cls_037">manufactured and sold by Epic are date stamped at the time of production.</span></div>
+<div style="position:absolute;left:36.00px;top:109.82px" class="cls_037"><span class="cls_037">Epic does not warrant Products that do not have a serial number and a</span></div>
+<div style="position:absolute;left:36.00px;top:121.70px" class="cls_037"><span class="cls_037">manufacturing date. This warranty shall be void if a Product is altered,</span></div>
+<div style="position:absolute;left:36.00px;top:133.58px" class="cls_037"><span class="cls_037">serviced or repaired by anyone other than Epic or its authorized Distributors.</span></div>
+<div style="position:absolute;left:36.00px;top:145.58px" class="cls_037"><span class="cls_037">This warranty shall also be void if there is a failure to maintain the Products</span></div>
+<div style="position:absolute;left:36.00px;top:157.46px" class="cls_037"><span class="cls_037">and the systems in which they operate in proper working conditions.</span></div>
+<div style="position:absolute;left:36.00px;top:172.34px" class="cls_037"><span class="cls_037">During the warranty periods, Epic shall, at its option, repair or replace any</span></div>
+<div style="position:absolute;left:36.00px;top:184.25px" class="cls_037"><span class="cls_037">defective product upon return of the product to its factory, at no charge for</span></div>
+<div style="position:absolute;left:36.00px;top:196.13px" class="cls_037"><span class="cls_037">labour and materials. Any replacement and/or repaired parts are warranted</span></div>
+<div style="position:absolute;left:36.00px;top:208.13px" class="cls_037"><span class="cls_037">for the remainder of the original warranty or ninety (90) days, whichever is</span></div>
+<div style="position:absolute;left:36.00px;top:220.01px" class="cls_037"><span class="cls_037">longer. The original purchaser must promptly notify Epic that there is a defect,</span></div>
+<div style="position:absolute;left:36.00px;top:231.89px" class="cls_037"><span class="cls_037">in material or workmanship, such written notice to be received in all events</span></div>
+<div style="position:absolute;left:36.00px;top:243.77px" class="cls_037"><span class="cls_037">prior  to  expiration  of  the  warranty  period.  The  Customer  assumes  all</span></div>
+<div style="position:absolute;left:36.00px;top:255.65px" class="cls_037"><span class="cls_037">responsibility for the proper selection, installation, operation and maintenance</span></div>
+<div style="position:absolute;left:36.00px;top:267.53px" class="cls_037"><span class="cls_037">of any products purchased from Epic. Custom products are only warranted to</span></div>
+<div style="position:absolute;left:36.00px;top:279.53px" class="cls_037"><span class="cls_037">the extent that they do not function upon delivery. In such cases, Epic can</span></div>
+<div style="position:absolute;left:36.00px;top:291.41px" class="cls_037"><span class="cls_037">repair, replace or credit as its option.</span></div>
+<div style="position:absolute;left:36.00px;top:306.29px" class="cls_037"><span class="cls_037">This warranty is for the original owner only and is therefore non-transferable,</span></div>
+<div style="position:absolute;left:36.00px;top:318.19px" class="cls_037"><span class="cls_037">non-assignable and is voided when the Warranted Product is transferred to</span></div>
+<div style="position:absolute;left:36.00px;top:330.07px" class="cls_037"><span class="cls_037">another party.</span></div>
+<div style="position:absolute;left:36.00px;top:345.07px" class="cls_037"><span class="cls_037">This warranty gives you specific legal rights and is only valid in the United</span></div>
+<div style="position:absolute;left:36.00px;top:356.95px" class="cls_037"><span class="cls_037">States and Canada. You may also have other rights which vary from state to</span></div>
+<div style="position:absolute;left:36.00px;top:368.83px" class="cls_037"><span class="cls_037">state or province to province.</span></div>
+<div style="position:absolute;left:36.00px;top:383.71px" class="cls_037"><span class="cls_037">EPIC MAKES NO FURTHER WARRANTIES, AND DISCLAIMS ANY AND</span></div>
+<div style="position:absolute;left:36.00px;top:395.59px" class="cls_037"><span class="cls_037">ALL OTHER WARRANTIES, EITHER EXPRESSED OR IMPLIED, WITH</span></div>
+<div style="position:absolute;left:36.00px;top:407.47px" class="cls_037"><span class="cls_037">RESPECT  TO  THE  PRODUCTS,  TRADEMARKS,  PROGRAMS  AND</span></div>
+<div style="position:absolute;left:36.00px;top:419.47px" class="cls_037"><span class="cls_037">SERVICES RENDERED BY EPIC INCLUDING WITHOUT LIMITATION,</span></div>
+<div style="position:absolute;left:36.00px;top:431.35px" class="cls_037"><span class="cls_037">INFRINGEMENT, TITLE, MERCHANTABILITY, OR FITNESS FOR ANY</span></div>
+<div style="position:absolute;left:36.00px;top:443.26px" class="cls_037"><span class="cls_037">PARTICULAR  PURPOSE.   EPIC  SHALL  NOT  BE  LIABLE  FOR  ANY</span></div>
+<div style="position:absolute;left:36.00px;top:455.14px" class="cls_037"><span class="cls_037">PERSONAL INJURY OR DEATH WHICH MAY ARISE IN THE COURSE OF,</span></div>
+<div style="position:absolute;left:36.00px;top:467.02px" class="cls_037"><span class="cls_037">OR AS A RESULT OF, PERSONAL, COMMERCIAL OR INDUSTRIAL USES</span></div>
+<div style="position:absolute;left:36.00px;top:478.90px" class="cls_037"><span class="cls_037">OF ITS PRODUCTS.</span></div>
+<div style="position:absolute;left:36.00px;top:493.90px" class="cls_037"><span class="cls_037">No increase or alteration, written or verbal, of the obligation of this warranty is</span></div>
+<div style="position:absolute;left:36.00px;top:505.78px" class="cls_037"><span class="cls_037">authorized. Epic does not represent that its products will prevent any loss by</span></div>
+<div style="position:absolute;left:36.00px;top:517.66px" class="cls_037"><span class="cls_037">fire or otherwise.</span></div>
+<div style="position:absolute;left:183.41px;top:572.64px" class="cls_003"><span class="cls_003">18</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-198px;top:11196px;width:396px;height:612px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/background19.jpg" width=396 height=612></div>
+<div style="position:absolute;left:54.02px;top:35.52px" class="cls_039"><span class="cls_039">Limitations of Warranty</span></div>
+<div style="position:absolute;left:54.02px;top:51.00px" class="cls_037"><span class="cls_037">This limited warranty applies only to the original purchases of the Warranted</span></div>
+<div style="position:absolute;left:54.02px;top:62.90px" class="cls_037"><span class="cls_037">Products from a Distributor; this warranty will not extend to any person that</span></div>
+<div style="position:absolute;left:54.02px;top:74.90px" class="cls_037"><span class="cls_037">acquires a Warranted Product on a used basis. Epic shall replace or repair, at</span></div>
+<div style="position:absolute;left:54.02px;top:86.78px" class="cls_037"><span class="cls_037">its sole discretion, each product returned by its authorized Distributor and</span></div>
+<div style="position:absolute;left:54.02px;top:98.66px" class="cls_037"><span class="cls_037">acknowledged by Epic to be defective, provided that such product shall have</span></div>
+<div style="position:absolute;left:54.02px;top:110.54px" class="cls_037"><span class="cls_037">been returned to Epic with all charges prepaid and the authorized Distributor</span></div>
+<div style="position:absolute;left:54.02px;top:122.42px" class="cls_037"><span class="cls_037">has followed Epic's Return Policy. The replacement product shall come from</span></div>
+<div style="position:absolute;left:54.02px;top:134.42px" class="cls_037"><span class="cls_037">Epic's stock and may be new or refurbished.</span></div>
+<div style="position:absolute;left:54.02px;top:149.30px" class="cls_037"><span class="cls_037">This limited warranty does not cover any defects, damage, deterioration or</span></div>
+<div style="position:absolute;left:54.02px;top:161.18px" class="cls_037"><span class="cls_037">malfunction   resulting   from   any   alteration,   modification,   improper   or</span></div>
+<div style="position:absolute;left:54.02px;top:173.06px" class="cls_037"><span class="cls_037">unreasonable use, tampering or maintenance, misuse, abuse, accident,</span></div>
+<div style="position:absolute;left:54.02px;top:184.97px" class="cls_037"><span class="cls_037">neglect, exposure to excess moisture, use not in accordance with the</span></div>
+<div style="position:absolute;left:54.02px;top:196.85px" class="cls_037"><span class="cls_037">Warranted Product documentation, fire, improper packing, shipping and</span></div>
+<div style="position:absolute;left:54.02px;top:208.85px" class="cls_037"><span class="cls_037">handling, (such claims must be presented to the carrier), lightning, power</span></div>
+<div style="position:absolute;left:54.02px;top:220.73px" class="cls_037"><span class="cls_037">surges, or other acts of nature. This limited warranty does not cover any</span></div>
+<div style="position:absolute;left:54.02px;top:232.61px" class="cls_037"><span class="cls_037">damage, deterioration or malfunction resulting from the installation or removal</span></div>
+<div style="position:absolute;left:54.02px;top:244.49px" class="cls_037"><span class="cls_037">of this product from any installation, any unauthorized tampering with this</span></div>
+<div style="position:absolute;left:54.02px;top:256.37px" class="cls_037"><span class="cls_037">product, or any other cause which does not relate directly to a defect in</span></div>
+<div style="position:absolute;left:54.02px;top:268.37px" class="cls_037"><span class="cls_037">materials and/or workmanship of this product.</span></div>
+<div style="position:absolute;left:54.02px;top:283.25px" class="cls_037"><span class="cls_037">Without limiting any other exclusion herein, Epic does not warrant that the</span></div>
+<div style="position:absolute;left:54.02px;top:295.13px" class="cls_037"><span class="cls_037">product covered hereby, including, without limitation, the technology and/or</span></div>
+<div style="position:absolute;left:54.02px;top:307.01px" class="cls_037"><span class="cls_037">integrated circuit(s) included in the product, will not become obsolete or that</span></div>
+<div style="position:absolute;left:54.02px;top:318.91px" class="cls_037"><span class="cls_037">such items are or will remain compatible with any other product or technology</span></div>
+<div style="position:absolute;left:54.02px;top:330.79px" class="cls_037"><span class="cls_037">with which the product may be used.</span></div>
+<div style="position:absolute;left:54.02px;top:360.43px" class="cls_040"><span class="cls_040">Items Not Covered by Warranty</span></div>
+<div style="position:absolute;left:54.02px;top:375.55px" class="cls_037"><span class="cls_037">In addition to the items which void the Warranty, freight cost to the repair</span></div>
+<div style="position:absolute;left:54.02px;top:387.43px" class="cls_037"><span class="cls_037">centre shall not be covered by Warranty. Epic’s liability for failure to repair the</span></div>
+<div style="position:absolute;left:54.02px;top:399.31px" class="cls_037"><span class="cls_037">product under this warranty after a reasonable number of attempts will be</span></div>
+<div style="position:absolute;left:54.02px;top:411.31px" class="cls_037"><span class="cls_037">limited to a replacement of the product, as the exclusive remedy for breach of</span></div>
+<div style="position:absolute;left:54.02px;top:423.19px" class="cls_037"><span class="cls_037">warranty.</span></div>
+<div style="position:absolute;left:54.02px;top:438.07px" class="cls_037"><span class="cls_037">In no event shall Epic be liable for indirect, incidental, special, exemplary,</span></div>
+<div style="position:absolute;left:54.02px;top:449.98px" class="cls_037"><span class="cls_037">punitive, or consequential damages of any nature including, but not limited to,</span></div>
+<div style="position:absolute;left:54.02px;top:461.86px" class="cls_037"><span class="cls_037">loss of profits, data, revenue, production, or use, business interruption, cost</span></div>
+<div style="position:absolute;left:54.02px;top:473.74px" class="cls_037"><span class="cls_037">of substitute or replacement equipment, facilities or services, down time,</span></div>
+<div style="position:absolute;left:54.02px;top:485.74px" class="cls_037"><span class="cls_037">purchaser's time, the claims of third parties, including customers, and injury to</span></div>
+<div style="position:absolute;left:54.02px;top:497.62px" class="cls_037"><span class="cls_037">property, or procurement of substitute goods or services arising out of or in</span></div>
+<div style="position:absolute;left:54.02px;top:509.50px" class="cls_037"><span class="cls_037">connection with this limited warranty, or the use or performance of any</span></div>
+<div style="position:absolute;left:54.02px;top:521.38px" class="cls_037"><span class="cls_037">product, whether based on contract or tort, including negligence, or any other</span></div>
+<div style="position:absolute;left:54.02px;top:533.26px" class="cls_037"><span class="cls_037">legal theory, even if Epic has been advised of the possibility of such damages.</span></div>
+<div style="position:absolute;left:201.43px;top:572.64px" class="cls_003"><span class="cls_003">19</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-198px;top:11818px;width:396px;height:612px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/background20.jpg" width=396 height=612></div>
+<div style="position:absolute;left:36.00px;top:35.40px" class="cls_037"><span class="cls_037">Epic's total aggregate liability for damages of any nature, regardless of form</span></div>
+<div style="position:absolute;left:36.00px;top:47.28px" class="cls_037"><span class="cls_037">of action, shall in no event exceed the amount paid by you to Epic for the</span></div>
+<div style="position:absolute;left:36.00px;top:59.18px" class="cls_037"><span class="cls_037">product upon which liability is based.</span></div>
+<div style="position:absolute;left:36.00px;top:74.18px" class="cls_037"><span class="cls_037">Some countries, districts, states or provinces do not allow the exclusion or</span></div>
+<div style="position:absolute;left:36.00px;top:86.06px" class="cls_037"><span class="cls_037">limitation of relief, special, incidental, consequential or indirect damages, or</span></div>
+<div style="position:absolute;left:36.00px;top:97.94px" class="cls_037"><span class="cls_037">the limitation of liability to specified amounts, so the above limitations or</span></div>
+<div style="position:absolute;left:36.00px;top:109.82px" class="cls_037"><span class="cls_037">exclusions may not apply to you.</span></div>
+<div style="position:absolute;left:36.00px;top:124.70px" class="cls_037"><span class="cls_037">Epic reserves the right to unilaterally change its warranties at any time, in its</span></div>
+<div style="position:absolute;left:36.00px;top:136.58px" class="cls_037"><span class="cls_037">sole discretion without prior notice. If material changes are made they will be</span></div>
+<div style="position:absolute;left:36.00px;top:148.70px" class="cls_037"><span class="cls_037">posted at </span><span class="cls_044">http://www.epicsafety.com/warranty</span><span class="cls_037">. Your continued use of the</span></div>
+<div style="position:absolute;left:36.00px;top:161.18px" class="cls_037"><span class="cls_037">warranted product will signify your acceptance of these changes. If you do not</span></div>
+<div style="position:absolute;left:36.00px;top:173.06px" class="cls_037"><span class="cls_037">accept material changes to the agreement, contact Epic to terminate this</span></div>
+<div style="position:absolute;left:36.00px;top:184.97px" class="cls_037"><span class="cls_037">agreement.</span></div>
+<div style="position:absolute;left:36.00px;top:199.85px" class="cls_037"><span class="cls_037">Epic neither assumes responsibility for, nor authorizes any other person</span></div>
+<div style="position:absolute;left:36.00px;top:211.85px" class="cls_037"><span class="cls_037">purporting to act on its behalf to modify or to change this warranty, nor to</span></div>
+<div style="position:absolute;left:36.00px;top:223.73px" class="cls_037"><span class="cls_037">assume for it any other warranty or liability concerning this product.</span></div>
+<div style="position:absolute;left:36.00px;top:238.61px" class="cls_037"><span class="cls_037">TO  THE  MAXIMUM  EXTENT  PERMITTED  BY  LAW,  THIS  LIMITED</span></div>
+<div style="position:absolute;left:36.00px;top:250.49px" class="cls_037"><span class="cls_037">WARRANTY AND THE REMEDIES SET FORTH ABOVE ARE EXCLUSIVE</span></div>
+<div style="position:absolute;left:36.00px;top:262.37px" class="cls_037"><span class="cls_037">AND   IN   LIEU   OF   ALL   OTHER   WARRANTIES,   REMEDIES   AND</span></div>
+<div style="position:absolute;left:36.00px;top:274.37px" class="cls_037"><span class="cls_037">CONDITIONS, WHETHER ORAL OR WRITTEN, EXPRESS OR IMPLIED.</span></div>
+<div style="position:absolute;left:36.00px;top:286.25px" class="cls_037"><span class="cls_037">TO THE MAXIMUM EXTENT PERMITTED BY LAW, EPIC SPECIFICALLY</span></div>
+<div style="position:absolute;left:36.00px;top:298.13px" class="cls_037"><span class="cls_037">DISCLAIMS   ANY   AND   ALL   IMPLIED   WARRANTIES,   INCLUDING,</span></div>
+<div style="position:absolute;left:36.00px;top:310.01px" class="cls_037"><span class="cls_037">WITHOUT  LIMITATION,  WARRANTIES  OF  MERCHANTABILITY  AND</span></div>
+<div style="position:absolute;left:36.00px;top:321.91px" class="cls_037"><span class="cls_037">FITNESS FOR A PARTICULAR PURPOSE. IF EPIC CANNOT LAWFULLY</span></div>
+<div style="position:absolute;left:36.00px;top:333.79px" class="cls_037"><span class="cls_037">DISCLAIM OR EXCLUDE IMPLIED WARRANTIES UNDER APPLICABLE</span></div>
+<div style="position:absolute;left:36.00px;top:345.79px" class="cls_037"><span class="cls_037">LAW, THEN ALL IMPLIED WARRANTIES COVERING THIS PRODUCT,</span></div>
+<div style="position:absolute;left:36.00px;top:357.67px" class="cls_037"><span class="cls_037">INCLUDING WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A</span></div>
+<div style="position:absolute;left:36.00px;top:369.55px" class="cls_037"><span class="cls_037">PARTICULAR   PURPOSE,   SHALL   APPLY   TO   THIS   PRODUCT   AS</span></div>
+<div style="position:absolute;left:36.00px;top:381.43px" class="cls_037"><span class="cls_037">PROVIDED UNDER APPLICABLE LAW.</span></div>
+<div style="position:absolute;left:36.00px;top:411.07px" class="cls_040"><span class="cls_040">Warranty replacement or repair</span></div>
+<div style="position:absolute;left:36.00px;top:426.19px" class="cls_037"><span class="cls_037">All the warranty claims must be accompanied by a Return Merchandise</span></div>
+<div style="position:absolute;left:36.00px;top:438.07px" class="cls_037"><span class="cls_037">Authorization (RMA) number which must be obtained before merchandise can</span></div>
+<div style="position:absolute;left:36.00px;top:449.98px" class="cls_037"><span class="cls_037">be returned for any warranty replacement or repair. To request an RMA</span></div>
+<div style="position:absolute;left:36.00px;top:461.86px" class="cls_037"><span class="cls_037">number, the customer can contact Epic’s Technical Support Center via</span></div>
+<div style="position:absolute;left:36.00px;top:473.74px" class="cls_037"><span class="cls_037">telephone.  The  Technical  Support  Center  will  provide  troubleshooting</span></div>
+<div style="position:absolute;left:36.00px;top:485.74px" class="cls_037"><span class="cls_037">assistance and if they find the product to be defective, will issue an RMA</span></div>
+<div style="position:absolute;left:36.00px;top:497.62px" class="cls_037"><span class="cls_037">number. The RMA number must be displayed on the outside packing of the</span></div>
+<div style="position:absolute;left:36.00px;top:509.50px" class="cls_037"><span class="cls_037">returned item. Transportation charge, if any, incurred in connection with the</span></div>
+<div style="position:absolute;left:36.00px;top:521.38px" class="cls_037"><span class="cls_037">return of a defective item to Epic shall be borne by the customer. Any collect</span></div>
+<div style="position:absolute;left:183.41px;top:572.64px" class="cls_003"><span class="cls_003">20</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-198px;top:12440px;width:396px;height:612px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/background21.jpg" width=396 height=612></div>
+<div style="position:absolute;left:54.02px;top:35.40px" class="cls_037"><span class="cls_037">shipments returned to Epic will be refused. Epic shall fix the goods without</span></div>
+<div style="position:absolute;left:54.02px;top:47.28px" class="cls_037"><span class="cls_037">extra costs under warranty period.</span></div>
+<div style="position:absolute;left:54.02px;top:62.18px" class="cls_037"><span class="cls_037">Epic shall pay any transportation charge incurred with the redelivery of a</span></div>
+<div style="position:absolute;left:54.02px;top:74.18px" class="cls_037"><span class="cls_037">repaired or replacement item or ship the warranty item with customer’s next</span></div>
+<div style="position:absolute;left:54.02px;top:86.06px" class="cls_037"><span class="cls_037">order. If, however, Epic reasonably determines that the item can function, the</span></div>
+<div style="position:absolute;left:54.02px;top:97.94px" class="cls_037"><span class="cls_037">customer shall pay all the transportation charges. If Epic determines, at its</span></div>
+<div style="position:absolute;left:54.02px;top:109.82px" class="cls_037"><span class="cls_037">sole discretion, that the allegedly defective item is not covered by the terms of</span></div>
+<div style="position:absolute;left:54.02px;top:121.70px" class="cls_037"><span class="cls_037">the warranty provided hereunder or that a warranty claim is made after the</span></div>
+<div style="position:absolute;left:54.02px;top:133.58px" class="cls_037"><span class="cls_037">warranty period, the cost of repair by Epic, including all shipping fees, shall be</span></div>
+<div style="position:absolute;left:54.02px;top:145.58px" class="cls_037"><span class="cls_037">paid by the customer.</span></div>
+<div style="position:absolute;left:54.02px;top:160.46px" class="cls_037"><span class="cls_037">Claim for damaged products or shortages when shipment arrived must be</span></div>
+<div style="position:absolute;left:54.02px;top:172.34px" class="cls_037"><span class="cls_037">made by the customer immediately. If any goods are damaged on shipment</span></div>
+<div style="position:absolute;left:54.02px;top:184.25px" class="cls_037"><span class="cls_037">arrival, it must be noted on the carrier's waybill prior to signing. Failure to note</span></div>
+<div style="position:absolute;left:54.02px;top:196.13px" class="cls_037"><span class="cls_037">the shortages or damages on the carrier's waybill will result in the claim being</span></div>
+<div style="position:absolute;left:54.02px;top:208.13px" class="cls_037"><span class="cls_037">denied. Epic will provide free replacement or credit note for the damaged</span></div>
+<div style="position:absolute;left:54.02px;top:220.01px" class="cls_037"><span class="cls_037">products or product shortage claims.</span></div>
+<div style="position:absolute;left:54.02px;top:234.89px" class="cls_037"><span class="cls_037">THE FOREGOING IS CUSTOMER’S AND DISTRIBUTOR'S SOLE AND</span></div>
+<div style="position:absolute;left:54.02px;top:246.77px" class="cls_037"><span class="cls_037">EXCLUSIVE REMEDY IN THE EVENT OF A WARRANTY CLAIM.</span></div>
+<div style="position:absolute;left:54.02px;top:276.29px" class="cls_040"><span class="cls_040">Out of Warranty Repairs</span></div>
+<div style="position:absolute;left:54.02px;top:291.53px" class="cls_037"><span class="cls_037">Epic will at its option repair or replace out-of-warranty products which are</span></div>
+<div style="position:absolute;left:54.02px;top:303.41px" class="cls_037"><span class="cls_037">returned to its factory according to the following conditions: Anyone returning</span></div>
+<div style="position:absolute;left:54.02px;top:315.31px" class="cls_037"><span class="cls_037">goods to Epic must first obtain a RMA. Epic will not accept any shipment</span></div>
+<div style="position:absolute;left:54.02px;top:327.19px" class="cls_037"><span class="cls_037">whatsoever for which prior authorization has not been obtained. Products</span></div>
+<div style="position:absolute;left:54.02px;top:339.07px" class="cls_037"><span class="cls_037">which Epic determines to be repairable will be repaired and returned. A set</span></div>
+<div style="position:absolute;left:54.02px;top:351.07px" class="cls_037"><span class="cls_037">fee which Epic has predetermined and which may be revised from time to</span></div>
+<div style="position:absolute;left:54.02px;top:362.95px" class="cls_037"><span class="cls_037">time, will be charged for each unit repaired. Products which Epic determines</span></div>
+<div style="position:absolute;left:54.02px;top:374.83px" class="cls_037"><span class="cls_037">not to be repairable will be replaced by the nearest equivalent product</span></div>
+<div style="position:absolute;left:54.02px;top:386.71px" class="cls_037"><span class="cls_037">available at that time. The current market price of the replacement product will</span></div>
+<div style="position:absolute;left:54.02px;top:398.59px" class="cls_037"><span class="cls_037">be charged for each replacement unit.</span></div>
+<div style="position:absolute;left:54.02px;top:413.47px" class="cls_037"><span class="cls_037">All out-of-warranty repairs must be shipped back to Epic PREPAID. We will</span></div>
+<div style="position:absolute;left:54.02px;top:425.47px" class="cls_037"><span class="cls_037">not accept any collect shipment returned to Epic for repair. Epic if possible,</span></div>
+<div style="position:absolute;left:54.02px;top:437.35px" class="cls_037"><span class="cls_037">will repair the customer’s product and will charge the customer at its prevailing</span></div>
+<div style="position:absolute;left:54.02px;top:449.26px" class="cls_037"><span class="cls_037">rates. Epic will arrange the return shipment at customer’s expense or ship with</span></div>
+<div style="position:absolute;left:54.02px;top:461.14px" class="cls_037"><span class="cls_037">customer’s next order. Invoice for the repair and shipping cost will be sent to</span></div>
+<div style="position:absolute;left:54.02px;top:473.02px" class="cls_037"><span class="cls_037">customer by email for payment prior to return of repaired product.</span></div>
+<div style="position:absolute;left:201.43px;top:572.64px" class="cls_003"><span class="cls_003">21</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-198px;top:13062px;width:396px;height:612px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="75b6ca96-5535-11eb-8b25-0cc47a792c0a_id_75b6ca96-5535-11eb-8b25-0cc47a792c0a_files/background22.jpg" width=396 height=612></div>
+<div style="position:absolute;left:36.00px;top:35.04px" class="cls_026"><span class="cls_026">WARNING:</span></div>
+<div style="position:absolute;left:36.00px;top:58.10px" class="cls_029"><span class="cls_029">Due to the nature of the fall detection mechanism, fall detection</span></div>
+<div style="position:absolute;left:36.00px;top:70.46px" class="cls_029"><span class="cls_029">cannot always be 100% accurate. False alarms or fall detection</span></div>
+<div style="position:absolute;left:36.00px;top:82.94px" class="cls_029"><span class="cls_029">failures cannot be completely avoided. Please utilize the emergency</span></div>
+<div style="position:absolute;left:36.00px;top:95.30px" class="cls_029"><span class="cls_029">button when needed.</span></div>
+<div style="position:absolute;left:36.00px;top:115.70px" class="cls_029"><span class="cls_029">Danger of explosion is associated with Epic Alert products if batteries</span></div>
+<div style="position:absolute;left:36.00px;top:128.06px" class="cls_029"><span class="cls_029">are installed incorrectly. Replace only with the same or equivalent</span></div>
+<div style="position:absolute;left:36.00px;top:140.54px" class="cls_029"><span class="cls_029">type recommended by the manufacturer. Disposal of used batteries</span></div>
+<div style="position:absolute;left:36.00px;top:152.90px" class="cls_029"><span class="cls_029">must be made in accordance with the waste recovery and recycling</span></div>
+<div style="position:absolute;left:36.00px;top:165.38px" class="cls_029"><span class="cls_029">regulations in your area.</span></div>
+<div style="position:absolute;left:36.00px;top:185.81px" class="cls_029"><span class="cls_029">Lanyards provided with Epic Alert devices are designed to reduce</span></div>
+<div style="position:absolute;left:36.00px;top:198.17px" class="cls_029"><span class="cls_029">the risk of strangulation by possessing a breaking feature under</span></div>
+<div style="position:absolute;left:36.00px;top:210.65px" class="cls_029"><span class="cls_029">significant pressure. Please do not tie the lanyard in a knot in order</span></div>
+<div style="position:absolute;left:36.00px;top:223.01px" class="cls_029"><span class="cls_029">to not disrupt the breaking feature. Due to its nature, Epic Safety Inc.</span></div>
+<div style="position:absolute;left:36.00px;top:235.37px" class="cls_029"><span class="cls_029">cannot guarantee that the lanyard breaking feature will succeed</span></div>
+<div style="position:absolute;left:36.00px;top:247.85px" class="cls_029"><span class="cls_029">100% of the time. Please use the lanyard at your own discretion to</span></div>
+<div style="position:absolute;left:36.00px;top:260.21px" class="cls_029"><span class="cls_029">ensure safety.</span></div>
+<div style="position:absolute;left:36.00px;top:280.61px" class="cls_029"><span class="cls_029">Electromagnetic interference can occur when in certain situations</span></div>
+<div style="position:absolute;left:36.00px;top:293.09px" class="cls_029"><span class="cls_029">such as:  in an aircraft or in any medical machinery such as x-ray or</span></div>
+<div style="position:absolute;left:36.00px;top:305.45px" class="cls_029"><span class="cls_029">magnetic resonance imaging machines. Please do not wear Epic</span></div>
+<div style="position:absolute;left:36.00px;top:317.95px" class="cls_029"><span class="cls_029">Alert products under these circumstances.</span></div>
+<div style="position:absolute;left:36.00px;top:338.35px" class="cls_029"><span class="cls_029">Please keep Epic Alert products out of the reach of children. If</span></div>
+<div style="position:absolute;left:36.00px;top:350.71px" class="cls_029"><span class="cls_029">batteries or other small components are swallowed, promptly see a</span></div>
+<div style="position:absolute;left:36.00px;top:363.07px" class="cls_029"><span class="cls_029">doctor.</span></div>
+<div style="position:absolute;left:36.00px;top:383.59px" class="cls_029"><span class="cls_029">No part of this manual may be reproduced or transmitted in any form</span></div>
+<div style="position:absolute;left:36.00px;top:395.95px" class="cls_029"><span class="cls_029">or by any means, electronic or mechanical, including photocopying</span></div>
+<div style="position:absolute;left:36.00px;top:408.31px" class="cls_029"><span class="cls_029">and recording, for any purpose, without the express written</span></div>
+<div style="position:absolute;left:36.00px;top:420.79px" class="cls_029"><span class="cls_029">permission of Epic Safety Inc.</span></div>
+<div style="position:absolute;left:36.00px;top:441.22px" class="cls_029"><span class="cls_029">Epic Safety Inc. reserves the right to make changes to any products</span></div>
+<div style="position:absolute;left:36.00px;top:453.58px" class="cls_029"><span class="cls_029">or technology herein to improve reliability, function or design.</span></div>
+<div style="position:absolute;left:36.00px;top:473.98px" class="cls_029"><span class="cls_029">Epic Safety Inc. does not assume any liability arising out of the</span></div>
+<div style="position:absolute;left:36.00px;top:486.46px" class="cls_029"><span class="cls_029">application or use of any product or circuit described herein; neither</span></div>
+<div style="position:absolute;left:36.00px;top:498.82px" class="cls_029"><span class="cls_029">does it convey any license under any patent rights nor the rights of</span></div>
+<div style="position:absolute;left:36.00px;top:511.30px" class="cls_029"><span class="cls_029">others.</span></div>
+<div style="position:absolute;left:183.41px;top:572.64px" class="cls_003"><span class="cls_003">22</span></div>
+</div>
 
-    <style>
-      body{
-        background-color: LightBlue;
-        font-family: Arial;
-      }
-      h1{
-        font-size: 30pt;
-        font-style: italic;
-        font-stretch: ultra-expanded;
-      }
-      </style>
-
-    </head>
-    <body>
-      <% include ../partials/nav.ejs %>
-      <h1> Hi Welcome to my page</h1>
-      <img src="C:\xampp\img\Capture-10.JPG" alt="" >
-
-
-      <footer>
-        <p align="center">Copyright © Epic Safety 2021<br>
-
-        </footer>
-
-         </body>
-         </html>
+</body>
+</html>
