@@ -35,10 +35,12 @@
       <form class="tyler" action="/login" method="post">
         <fieldset>
           <legend class="roy">Please Login:</legend>
-        <p>Name:</p><input type="text" name="uname" placeholder="Enter your Name"><br><br>
-        <p>Email:</p><input type="email" name="uemail" placeholder="Enter your Email address"><br><br>
+        <p>Name:</p><input type="text" name="uname" placeholder="Enter User Name"><br><br>
+        <p>Email:</p><input type="password" name="upassword" placeholder="Enter the Password"><br><br>
 
-        <input type="submit" name="add" value="Submit">
+        <input type="button" value="Login" onClick="pasuser(this.form)">
+        <br><br>
+        <input type="Reset">
       </fieldset>
        </form>
      </div>
@@ -50,6 +52,19 @@
        <p align="center">Copyright © Epic Safety 2021<br>
 
        </footer>
+       <script>
+       function pasuser(form) {
+         if (form.uname.value=="admin") {
+           if (form.upassword.value=="12345") {
+             location="/login"
+           } else {
+             alert("Invalid Password")
+           }
+         } else {
+           alert("Invalid UserID")
+       }
+     }
+       </script>
 
         </body>
         </html>
