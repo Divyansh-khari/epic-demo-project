@@ -35,8 +35,8 @@
       <form class="tyler" action="/login" method="post">
         <fieldset>
           <legend class="roy">Please Login:</legend>
-        <p>Name:</p><input type="text" name="uname" placeholder="Enter User Name"><br><br>
-        <p>Email:</p><input type="password" name="upassword" placeholder="Enter the Password"><br><br>
+        <p>UserName:</p><input type="text" name="uname" placeholder="Enter the User Name"><br><br>
+        <p>Password:</p><input type="password" name="upassword" placeholder="Enter the Password"><br><br>
 
         <input type="button" value="Login" onClick="pasuser(this.form)">
         <br><br>
@@ -56,7 +56,7 @@
        function pasuser(form) {
          if (form.uname.value=="admin") {
            if (form.upassword.value=="12345") {
-             location="/login"
+             location.replace("https://divyansh1234.herokuapp.com/login")
            } else {
              alert("Invalid Password")
            }
