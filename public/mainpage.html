@@ -55,7 +55,7 @@
         <p>UserName:</p><input type="text" class="input" name="uname" placeholder="Enter the User Name"><br><br>
         <p>Password:</p><input type="password" class="input" name="upassword" placeholder="Enter the Password"><br><br>
 
-        <input type="submit" name="add" value="Submit">
+        <input type="submit"/>
 
       </fieldset>
        </form>
@@ -72,6 +72,7 @@
      </div>
      <script>
      const searchFrom=document.querySelector('.tyler');
+     const input=document.querySelector('.input');
      searchFrom.addEventListener('submit', retrieve);
     function retrieve(e){
       if(input.value==''){
