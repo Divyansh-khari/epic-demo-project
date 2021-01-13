@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% include ../partials/header.ejs %>
+
   <link rel="stylesheet" href="./stylesheets/style.css" />
 
 
@@ -32,11 +32,21 @@
         font-stretch: ultra-expanded;
 
       }
+      .id{
+        .bottom {
+        position: relative;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          background-color: rgb(152,255,152);
+          text-align: center;
+        }
+      }
       </style>
 
     </head>
     <body>
-      <% include ../partials/nav.ejs %>
+      
       <img src="Epic-Safety-Logo-1.jpg" width="200" height="120">
       <h1 class="elon">Login Page for Users:</h1>
       <div class= "qwerty">
@@ -52,7 +62,7 @@
      </div>
 
      <br><br><br><br><br><br><br><br><br>
-     <footer>
+     <footer class="id">
        <p align="center">Copyright © Epic Safety 2021<br>
 
        </footer>
