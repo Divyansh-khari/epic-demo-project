@@ -16,7 +16,42 @@
         text-align: center;
         text-decoration-style: solid;
       }
-      </style>
+      .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+      }
+
+      /* Style the buttons inside the tab */
+.     tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+
+    /* Change background color of buttons on hover */
+.     tab button:hover {
+      background-color: #ddd;
+    }
+
+    /* Create an active/current tablink class */
+.   tab button.active {
+    background-color: #ccc;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    }
+    </style>
 
     </head>
     <body>
@@ -25,34 +60,67 @@
       <br>
       <br>
       <h4> Choose from the following options</h4>
-      <ol>
-        <li><strong> Apex-User Manuals</strong></li>
-        <li> <strong>Apex Installation Manual </strong></li>
-        <li> <strong>Quick Configuration Guide</strong></li>
-      </ol>
+      <p>Click on the buttons inside the tabbed menu:</p>
 
-      <img src="2.JPG"></img>
-      <img src="3.JPG"></img>
-      <img src="5.JPG"></img>
-      <img src="6.JPG"></img>
-      <img src="7.JPG"></img>
-      <img src="8.JPG"></img>
-      <img src="9.JPG"></img>
-      <img src="10.JPG"></img>
-      <img src="11.JPG"></img>
-      <img src="12.JPG"></img>
-      <img src="13.JPG"></img>
-      <img src="14.JPG"></img>
-      <img src="15.JPG"></img>
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')">Apex-User Manuals</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Apex Installation Manual</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Quick Configuration Guide</button>
+</div>
 
+<div id="London" class="tabcontent">
+  <h3>Apex-User Manuals</h3>
+  <br>
+  <img src="2.JPG"></img>
+  <img src="3.JPG"></img>
+  <img src="5.JPG"></img>
+  <img src="6.JPG"></img>
+  <img src="7.JPG"></img>
+  <img src="8.JPG"></img>
+  <img src="9.JPG"></img>
+  <img src="10.JPG"></img>
+  <img src="11.JPG"></img>
+  <img src="12.JPG"></img>
+  <img src="13.JPG"></img>
+  <img src="14.JPG"></img>
+  <img src="15.JPG"></img>
 
+</div>
 
+<div id="Paris" class="tabcontent">
+  <h3>Apex Installation Manual</h3>
+  <br>
+  <img src="101.JPG"></img>
+  <img src="102.JPG"></img>
+  <img src="103.JPG"></img>
+  <img src="104.JPG"></img>
+  <img src="105.JPG"></img>
+  <img src="106.JPG"></img>
+</div>
 
+<div id="Tokyo" class="tabcontent">
+  <h3>Quick Configuration Guide:</h3>
+  <img src="200.JPG"></img>
+</div>
 
-      <footer>
-        <p align="center">Copyright © Epic Safety 2021<br>
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
 
-        </footer>
-
-         </body>
-         </html>
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+  <footer>
+      <p align="center">Copyright © Epic Safety 2021<br>
+  </footer>
+ </body>
+  </html>
