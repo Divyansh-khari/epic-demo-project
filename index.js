@@ -37,6 +37,7 @@ var app=express()
   }
   return result;
 }
+
 app.post('/login', (req,res)=>{
   res.render('pages/image');
 });

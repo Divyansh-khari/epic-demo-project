@@ -70,7 +70,19 @@
 
        </footer>
      </div>
-    
+    <script>
+    function user1() {
+      var user = document.getElementById('username').value
+      var pass = document.getElementById('password').value
+      if (user == "admin" && pass == "123") {
+        window.open("https://divyansh1234.herokuapp.com/login")
+
+      } else {
+        alert('Incorrect Username or Password!! Try Again')
+      }
+    }
+
+    </script>
 
 
         </body>
