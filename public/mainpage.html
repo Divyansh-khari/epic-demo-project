@@ -52,10 +52,10 @@
       <form class="tyler" action="/login" method="post">
         <fieldset>
           <legend class="roy">Please Login:</legend>
-        <p>UserName:</p><input type="text" class="input" name="uname" placeholder="Enter the User Name"><br><br>
-        <p>Password:</p><input type="password" class="input" name="upassword" placeholder="Enter the Password"><br><br>
+        <p>UserName:</p><input type="text" id="username" name="uname" placeholder="Enter the User Name"><br><br>
+        <p>Password:</p><input type="password" id="password" name="upassword" placeholder="Enter the Password"><br><br>
 
-        <input type="submit"/>
+        <button onclick="user1()">Submit</button>
 
       </fieldset>
        </form>
@@ -70,17 +70,7 @@
 
        </footer>
      </div>
-     <script>
-     const searchFrom=document.querySelector('.tyler');
-     const input=document.querySelector('.input');
-     searchFrom.addEventListener('submit', retrieve);
-    function retrieve(e){
-      if(input.value==''){
-        alert('Required field is empty!!');
-        return;
-      }
-
-     </script>
+    
 
 
         </body>
