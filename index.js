@@ -59,6 +59,9 @@ app.post('/register',(req, res)=>{
   if(f1=='' || f2=='' || f3=='' || f4==''){
     res.send("<h2>Please fill all the required fields in the form!!</h2>")
   }
+  else if (f3!=f4) {
+    res.send("<h2>The two password supplied dont't match!!</h2>")
+  }
   else{
     res.render("pages/login");
   }
