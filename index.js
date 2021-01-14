@@ -38,9 +38,15 @@ var app=express()
   return result;
 }
 
+var user = document.getElementById('username').value
+var pass = document.getElementById('password').value
 app.post('/login', (req,res)=>{
-  res.render('pages/image');
-});
+  if (user == "admin" && pass == "123") {
+    res.render('pages/image');
+}else{
+  res.send("Please enter correct user name and password!!")
+}
+);
 app.post('/register',(req, res)=>{
   res.render('pages/login');
 });
