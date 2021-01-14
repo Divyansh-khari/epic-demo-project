@@ -16,10 +16,10 @@ var app=express()
   app.set('views', path.join(__dirname, 'views'));
   app.set('view engine', 'ejs')
   app.get('/', (req, res) => res.render('pages/index'));
-  app.get('/db', async (req, res) => {
+  app.get('/db',  async(req, res) => {
     try {
       const client = await pool.connect();
-      const result = await client.query('SELECT * FROM test_table');
+      const result = await client.query('SELECT * FROM Customer');
       const results = { 'results': (result) ? result.rows : null};
       res.render('pages/db', results );
       client.release();
@@ -28,7 +28,7 @@ var app=express()
       res.send("Error " + err);
     }
   });
-  app.get('/times', (req, res) => res.send(showTimes()));
+  app.get('/times', async(req, res) => res.send(showTimes()));
   showTimes = () => {
   let result = '';
   const times = process.env.TIMES || 5;
@@ -39,7 +39,7 @@ var app=express()
 }
 
 
-app.post('/login', (req,res)=>{
+app.post('/login', async(req,res)=>{
   var user= req.body.uname;
   var password= req.body.upassword;
   if(user=='admin' && password=='123'){
@@ -51,21 +51,20 @@ app.post('/login', (req,res)=>{
 }
 
 );
-app.post('/register',(req, res)=>{
+app.post('/register',async(req, res)=>{
   var f1= req.body.uname;
   var f2=req.body.uemail;
   var f3= req.body.uaddress;
   var f4=req.body.uaddress1;
   if(f1=='' || f2=='' || f3=='' || f4==''){
-    res.send("<h2>Please fill all the required fields in the form!!</h2>")
+    res.send("<h2>Please fill all the required fields in the form!!</h2>");
   }
   else if (f3!=f4) {
-    res.send("<h2>The two password supplied dont't match!!</h2>")
+    res.send("<h2>The two passwords supplied dont't match!!</h2>");
   }
   else{
-    res.render("pages/login");
+    res.render('pages/login');
   }
 
-  res.render('pages/login');
-});
+  });
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));

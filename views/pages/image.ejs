@@ -12,9 +12,13 @@
         margin-left: auto;
         margin-right: auto;
       }
+      h5:hover{
+        background-color: yellow;
+      }
       h2{
         text-align: center;
         text-decoration-style: solid;
+        background-color: rgb(152,255,152);
       }
       .tab {
         text-align: center;
@@ -35,10 +39,7 @@
       font-size: 17px;
     }
 
-    /* Change background color of buttons on hover */
-.     tab button:hover {
-      background-color: green;
-    }
+.
 
     /* Create an active/current tablink class */
 .   tab button.active {
@@ -55,9 +56,10 @@
     .tyler{
       text-align: center;
       font-size: 30pt;
-
+      background-color:rgb(50,455,200);
       font-weight: bold;
     }
+
     </style>
 
     </head>
@@ -72,9 +74,9 @@
     </div>
 
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')">Apex-User Manuals</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Apex Installation Manual</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Quick Configuration Guide</button>
+  <button class="tablinks" onclick="openCity(event, 'London')"><h5>Apex-User Manuals</h5></button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')"><h5>Apex Installation Manual</h5></button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')"><h5>Quick Configuration Guide</h5></button>
 </div>
 
 <div id="London" class="tabcontent">
@@ -93,6 +95,8 @@
   <img src="13.JPG"></img>
   <img src="14.JPG"></img>
   <img src="15.JPG"></img>
+  <br>
+  <h5 align="center">Copyright © Epic Safety 2021</h5><br>
 
 </div>
 
@@ -105,11 +109,15 @@
   <img src="104.JPG"></img>
   <img src="105.JPG"></img>
   <img src="106.JPG"></img>
+  <br>
+  <h5 align="center">Copyright © Epic Safety 2021</h5><br>
 </div>
 
 <div id="Tokyo" class="tabcontent">
 
   <img src="200.JPG"></img>
+  <br>
+  <h5 align="center">Copyright © Epic Safety 2021</h5><br>
 </div>
 
 <script>
@@ -128,8 +136,6 @@ function openCity(evt, cityName) {
   evt.currentTarget.className += " active";
 }
 </script>
-  <footer>
-      <p align="center">Copyright © Epic Safety 2021<br>
-  </footer>
+
  </body>
   </html>
