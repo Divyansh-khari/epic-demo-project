@@ -52,6 +52,16 @@ app.post('/login', (req,res)=>{
 
 );
 app.post('/register',(req, res)=>{
+  var f1= req.body.uname;
+  var f2=req.body.uemail;
+  var f3= req.body.uaddress;
+  if(f1=='' || f2=='' || f3==''){
+    res.send("<h2>Please fill all the required fields in the form!!</h2>")
+  }
+  else{
+    res.render("pages/login");
+  }
+
   res.render('pages/login');
 });
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
