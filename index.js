@@ -46,11 +46,8 @@ app.post('/login', (req,res)=>{
     res.render('pages/image');
   }
   else{
-    res.send("The username and password entered are incorrect. Please Try again!!")
+    res.send("<h2>The username and password entered are incorrect. Please Try again!!</h2>")
   }
-
-
-
 }
 
 );
