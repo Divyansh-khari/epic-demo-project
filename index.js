@@ -55,7 +55,8 @@ app.post('/register',(req, res)=>{
   var f1= req.body.uname;
   var f2=req.body.uemail;
   var f3= req.body.uaddress;
-  if(f1=='' || f2=='' || f3==''){
+  var f4=req.body.uaddress1;
+  if(f1=='' || f2=='' || f3=='' || f4==''){
     res.send("<h2>Please fill all the required fields in the form!!</h2>")
   }
   else{

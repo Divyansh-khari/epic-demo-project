@@ -12,23 +12,26 @@
         background-color:
       }
       .qwerty{
-        display: inline;
+        display: flex;
         align-items: center;
         justify-content: center;
+
       }
       .elon{
-        font-size: 40pt;
+        font-size: 24pt;
         font-style: italic;
         text-align: center;
-        text-shadow: 20px 20px 10px rgba(0,0,0,0.5);
+
         font-weight: bold;
-        background-color: rgb(152,255,152);
+
       }
       .red{
         text-align: center;
+        font-style: italic;
+        font-size: 10pt;
       }
       .roy{
-        font-size: 20pt;
+        font-size: 18pt;
         font-style: italic;
         font-stretch: ultra-expanded;
 
@@ -52,8 +55,14 @@
       <form class="tyler" action="/login" method="post">
         <fieldset>
           <legend class="roy">Please Login:</legend>
-        <p>UserName:</p><input type="text" id="username" name="uname" placeholder="Enter the User Name"><br><br>
-        <p>Password:</p><input type="password" id="password" name="upassword" placeholder="Enter the Password"><br><br>
+          <p>
+        <label>UserName:</label><input type="text" id="username" name="uname" placeholder="Enter the UserName">
+      </p>
+        <br><br>
+        <p>
+        <label>Password:</label><input type="password" id="password" name="upassword" placeholder="Enter the Password">
+      </p>
+        <br><br>
 
         <button>Submit</button>
 
@@ -66,7 +75,9 @@
      <br><br><br><br><br><br><br><br><br>
      <div class="mj">
      <footer>
-       <p align="center">Copyright © Epic Safety 2021<br>
+       <h4 align="center">Copyright © Epic Safety 2021</h4>
+
+         <br>
 
        </footer>
      </div>
