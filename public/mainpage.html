@@ -55,7 +55,7 @@
         <p>UserName:</p><input type="text" id="username" name="uname" placeholder="Enter the User Name"><br><br>
         <p>Password:</p><input type="password" id="password" name="upassword" placeholder="Enter the Password"><br><br>
 
-        <button onclick="user1()">Submit</button>
+        <button>Submit</button>
 
       </fieldset>
        </form>
@@ -70,20 +70,8 @@
 
        </footer>
      </div>
-    <script>
-    function user1() {
-      var user = document.getElementById('username').value
-      var pass = document.getElementById('password').value
-      if (user == "admin" && pass == "123") {
-        window.open("https://divyansh1234.herokuapp.com/login.html")
 
-      } else {
-        alert('Incorrect Username or Password!! Try Again')
 
-      }
-    }
-
-    </script>
 
 
         </body>

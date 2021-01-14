@@ -51,10 +51,10 @@
       <form class="tyler" action="/login" method="post">
         <fieldset>
           <legend class="roy">Please Login:</legend>
-        <p>Name:</p><input type="text" name="uname" placeholder="Enter your Name"><br><br>
-        <p>UserName</p><input type="email" name="uemail" placeholder="Enter your Email address"><br><br>
+        <p>UserName:</p><input type="text" name="uname" placeholder="Enter the username"><br><br>
+        <p>Password</p><input type="password" name="upassword" placeholder="Enter the password"><br><br>
 
-        <button onclick="user1()">Submit</button>
+        <button>Submit</button>
       </fieldset>
        </form>
      </div>
@@ -66,20 +66,7 @@
 
        </footer>
      </div>
-     <script>
-     function user1() {
-       var user = document.getElementById('username').value
-       var pass = document.getElementById('password').value
-       if (user == "admin" && pass == "123") {
-         window.open("https://divyansh1234.herokuapp.com/login.html")
 
-       } else {
-         alert('Incorrect Username or Password!! Try Again')
-         break;
-       }
-     }
-
-     </script>
 
         </body>
         </html>

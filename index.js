@@ -38,14 +38,21 @@ var app=express()
   return result;
 }
 
-var user = document.getElementById('username').value
-var pass = document.getElementById('password').value
+
 app.post('/login', (req,res)=>{
-  if (user == "admin" && pass == "123") {
+  var user= req.body.uname;
+  var password= req.body.upassword;
+  if(user=='admin' && password=='123'){
     res.render('pages/image');
-}else{
-  res.send("Please enter correct user name and password!!")
+  }
+  else{
+    res.send("The username and password entered are incorrect. Please Try again!!")
+  }
+
+
+
 }
+
 );
 app.post('/register',(req, res)=>{
   res.render('pages/login');
