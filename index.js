@@ -42,15 +42,16 @@ var app=express()
 app.post('/login', async(req,res)=>{
   var user= req.body.uname;
   var password= req.body.upassword;
-  if(user=='admin' && password=='123'){
-      res.render('pages/image');
-    }
-    else{
-    res.send("<h2>You are not authorized to access the Website.The Website use is limited to admin members only </h2>")
+  try {
+    const client = await pool.connect();
+    const result = await client.query(`SELECT name,password FROM Customer WHERE name='${user}'`);
+    const results = { 'results': (result) ? result.rows : null};
+    res.render('pages/image', results );
+    client.release();
+  } catch (err) {
+    console.error(err);
+    res.send("<h2>You are not authorized to access the Website.The Website use is limited to admin members only </h2>" + err);
   }
-
-
-
 }
 );
 
