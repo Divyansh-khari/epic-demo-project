@@ -13,11 +13,23 @@
 
 <div class="container">
 <h2> Database Results:</h2>
-<ul>
+<table >
+
+  <tr >
+    <th >UserName  </th>
+    <th >Email </th>
+    <th >Password  </th>
+  </tr>
+
     <% results.forEach(function(r) { %>
-        <li><%= r.name %> - <%= r.password %> - <%= r.email%></li>
+      <tr>
+        <td ><%= r.name %></td>
+        <td ><%= r.email %></td>
+        <td > <%= r.password %></td>
+
+        </tr>
     <% }); %>
-</ul>
+</table>
 
 </div>
 
