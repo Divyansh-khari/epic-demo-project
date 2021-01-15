@@ -49,7 +49,7 @@ app.post('/login', async(req,res)=>{
     res.render('pages/image');
   }
   else{
-    res.send("<h2>The username and password you entered are incorrect. Please Try again!!</h2>")
+    res.send("<h2>You are not authorized to access the Website.The Website use is limited to admin members only </h2>")
   }
 }
 
