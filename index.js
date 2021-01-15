@@ -8,10 +8,7 @@ const pool = new Pool({
   }
 });
 const PORT = process.env.PORT || 5000;
-f1= req.body.uname;
-f2=req.body.uemail;
-f3= req.body.uaddress;
-f4=req.body.uaddress1;
+
 var app=express()
   app.use(express.json());
   app.use(express.urlencoded({extended:false}));
@@ -45,7 +42,7 @@ var app=express()
 app.post('/login', async(req,res)=>{
   var user= req.body.uname;
   var password= req.body.upassword;
-  if(user==f1 && password==f3){
+  if(user=='admin' && password=='123'){
     res.render('pages/image');
   }
   else{
@@ -56,7 +53,10 @@ app.post('/login', async(req,res)=>{
 );
 
 app.post('/register',async(req, res)=>{
-
+  f1= req.body.uname;
+  f2=req.body.uemail;
+  f3= req.body.uaddress;
+  f4=req.body.uaddress1;
   const client = await pool.connect();
 
   if(f1=='' || f2=='' || f3=='' || f4==''){
