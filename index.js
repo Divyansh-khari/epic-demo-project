@@ -66,8 +66,7 @@ app.post('/register',async(req, res)=>{
   }
   else{
     try{
-
-    var insertQuery=`INSERT INTO Customer VALUES('${f1}',${f2},${f3})`;
+    var insertQuery=`INSERT INTO Customer VALUES('${f1}','${f2}',${f3})`;
     const result = await client.query(insertQuery);
     client.release();
        } catch (err) {
