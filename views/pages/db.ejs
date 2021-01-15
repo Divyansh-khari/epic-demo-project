@@ -9,14 +9,24 @@
 <% include ../partials/nav.ejs %>
 
 <div class="container">
-<h2>Database Results</h2>
 
-<ul>
-    <% results.forEach(function(r) { %>
-        <li><%= r.id %> - <%= r.name %></li>
+<table >
+  <caption> Database Results:</caption>
+  <tr >
+    <th >UserName  </th>
+    <th >Email </th>
+    <th >Password  </th>
+  </tr>
+
+    <% rows.forEach(function(r) { %>
+      <tr>
+        <td ><%= r.f1 %></td>
+        <td ><%= r.f2 %></td>
+        <td > <%= r.f3 %></td>
+
+        </tr>
     <% }); %>
-</ul>
-
+</table>
 </div>
 
 </body>

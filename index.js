@@ -8,7 +8,6 @@ const pool = new Pool({
   }
 });
 const PORT = process.env.PORT || 5000;
-
 var app=express()
   app.use(express.json());
   app.use(express.urlencoded({extended:false}));
@@ -51,11 +50,14 @@ app.post('/login', async(req,res)=>{
 }
 
 );
+
 app.post('/register',async(req, res)=>{
   var f1= req.body.uname;
   var f2=req.body.uemail;
   var f3= req.body.uaddress;
   var f4=req.body.uaddress1;
+  const client = await pool.connect();
+
   if(f1=='' || f2=='' || f3=='' || f4==''){
     res.send("<h2>Please fill all the required fields in the form!!</h2>");
   }
@@ -63,8 +65,16 @@ app.post('/register',async(req, res)=>{
     res.send("<h2>The two passwords supplied dont't match!!</h2>");
   }
   else{
-    res.render('pages/login');
-  }
+    try{
 
+    var insertQuery=`INSERT INTO Customer VALUES('${f1}',${f2},${f3})`;
+    const result = await client.query(insertQuery);
+    client.release();
+       } catch (err) {
+         console.error(err);
+         res.send("Error here: " + err);
+       }
+       res.render('pages/login');
+     }
   });
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
