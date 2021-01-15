@@ -1,0 +1,29 @@
+table{
+  border: 1pt solid black;
+}
+td{
+  border: 1pt solid black;
+
+}
+body{
+  background-color: Azure;
+  font-family: Arial;
+}
+th{
+  border: 1pt solid black;
+}
+caption{
+  font-size: 20pt;
+  color: BlueViolet;
+}
+ tr:hover {
+   background-color:lightblue;
+   border-bottom: 1px solid white;
+    color: #6E6E6E;
+  }
+[type="text"]{
+  border: 5px solid green;
+}
+[type="text"]{
+  border: 5px solid green;
+}
