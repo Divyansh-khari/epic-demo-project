@@ -42,6 +42,10 @@ var app=express()
 app.post('/login', async(req,res)=>{
   var user= req.body.uname;
   var password= req.body.upassword;
+  const client = await pool.connect();
+  var loginQuery=`SELECT name, email, password FROM Customer WHERE name='${user}'`;
+  const result = await client.query(loginQuery);
+  client.release();
   if(user=='admin' && password=='123'){
     res.render('pages/image');
   }
