@@ -44,11 +44,9 @@ app.post('/login', async(req,res)=>{
   var password= req.body.upassword;
 
   const client = await pool.connect();
-  var selectQuery=`SELECT name,password FROM Customer WHERE name='${user}'`;
-  pool.query(selectQuery,(error,result) =>{
-  var results ={'rows': result.rows}
-  if( results.rows[0].name==user && results.rows[0].password==password){
-      res.render('pages/image');
+
+  if(user=='admin' && password=='123'){
+    res.render('pages/image');
   }
   else{
     res.send("<h2>The username and password you entered are incorrect. Please Try again!!</h2>")
