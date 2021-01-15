@@ -71,7 +71,7 @@ app.post('/register',async(req, res)=>{
     client.release();
        } catch (err) {
          console.error(err);
-         res.send("Error here: " + err);
+         res.send("Error here is : " + err);
        }
        res.render('pages/login');
      }
