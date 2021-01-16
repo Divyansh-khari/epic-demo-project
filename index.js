@@ -45,12 +45,16 @@ app.post('/login', async(req,res)=>{
   try {
     const client = await pool.connect();
     const result = await client.query(`SELECT name,password FROM Customer WHERE name='${user}'`);
-    var results ={'rows': result.rows}
-    res.render('pages/image', results );
+    const results = { 'results': (result) ? result.rows : null};
+    if( results.rows[0].name==user && results.rows[0].password==password){
+      res.render('pages/image');
+    }
+    else{
+      res.send("<h2>You are not authorized to access the Website.The Website use is limited to admin members only </h2>" + err);
+    }
     client.release();
   } catch (err) {
-    console.error(err);
-    res.send("<h2>You are not authorized to access the Website.The Website use is limited to admin members only </h2>" + err);
+    res.send("Error " + err);
   }
 }
 );
