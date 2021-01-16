@@ -55,7 +55,7 @@ app.post('/login', async(req,res)=>{
     }
     client.release();
   } catch (err) {
-    res.send("Error here:": + err );
+    res.send("Error here:" + err );
   }
 }
 );
