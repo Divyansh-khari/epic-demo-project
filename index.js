@@ -45,7 +45,7 @@ app.post('/login', async(req,res)=>{
   try {
     const client = await pool.connect();
     const result = await client.query(`SELECT name,password FROM Customer WHERE name='${user}'`);
-    const results = { 'results': (result) ? result.rows : null};
+    var results ={'rows': result.rows}
     res.render('pages/image', results );
     client.release();
   } catch (err) {
