@@ -46,6 +46,7 @@ app.post('/login', async(req,res)=>{
     const client = await pool.connect();
     const result = await client.query(`SELECT name,password FROM Customer WHERE name='${user}'`);
     const results = { 'results': (result) ? result.rows : null};
+    console.log(results);
     if( results.rows.name==user && results.rows.password==password){
       res.render('pages/image');
     }
