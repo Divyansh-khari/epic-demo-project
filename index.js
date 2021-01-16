@@ -45,9 +45,9 @@ app.post('/login', async(req,res)=>{
   try {
     const client = await pool.connect();
     const result = await client.query(`SELECT name,password FROM Customer WHERE name='${user}'`);
-    const results = { 'results': (result) ? result.rows : null};
+    var results ={'rows': result.rows}
     console.log(results);
-    if( results.rows==user && results.rows==password){
+    if( results.rows[0].name==user && results.rows[0].password==password){
       res.render('pages/image');
     }
     else{
@@ -55,7 +55,7 @@ app.post('/login', async(req,res)=>{
     }
     client.release();
   } catch (err) {
-    res.send("Error here:  " + err);
+    res.send("Error here:  ");
   }
 }
 );
