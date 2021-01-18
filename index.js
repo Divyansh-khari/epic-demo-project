@@ -48,11 +48,13 @@ app.post('/login', async(req,res)=>{
   if(result.name==user && result.password==password){
       res.render('pages/image');
   }
+  else if(result=''){
+    res.send("please Register your self.")
+    res.redirect('/Register');
+  }
   else{
       res.send("<h2>You have enetered Wrong Password or Username. Try Again!! </h2>")
   }
-
-
   });
 
 
