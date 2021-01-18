@@ -47,7 +47,9 @@ app.post('/login', async(req,res)=>{
   var selectQuery= `SELECT name, password FROM Customer WHERE name='${user}'`;
   const result = await client.query(selectQuery);
   client.release();
-  if(result.name[0]==user && result.password[0]==password){
+  console.log(result.name);
+  console.log(result.password);
+  if(result.name==user && result.password==password){
       res.render('pages/image');
   }
   else if(result==''){
