@@ -42,23 +42,13 @@ var app=express()
 app.post('/login', async(req,res)=>{
   var user=req.body.uname;
   var password= req.body.upassword;
-  try{
-    const client= await pool.connect();
-    const result=await client.query('SELECT name, password FROM Customer WHERE name='${user}');
-    if(result==''){
-      res.send("User has not Registered.Please register yourself");
-      res.redirect('/Register');
-    }
-    else if(result.name=='${user}' && result.password=='${password}'){
-      res.render(pages/images);
-    }
-    else{
-      res.send("<h2>You have entered wrong password. Try Again!! </h2>")
-    }
-  }
-  catch{
-    res.send("Error is "+ err);
-  }
+  if(user=='admin' && password=='123'){
+   res.render('pages/image');
+ }
+ else{
+   res.send("Wrong Passoword");
+ }
+
 }
 );
 
