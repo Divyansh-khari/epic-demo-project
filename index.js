@@ -50,7 +50,7 @@ app.post('/login', async(req,res)=>{
   if(result.name==user && result.password==password){
       res.render('pages/image');
   }
-  else if(result=''){
+  else if(result==''){
     res.send("please Register your self.")
     res.redirect('/Register');
   }
