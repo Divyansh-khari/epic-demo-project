@@ -54,6 +54,9 @@ app.post('/login', async(req,res)=>{
   if(results.rows[0].name==user && results.rows[0].password==password){
    res.render('pages/image');
  }
+ if(results.rows[0].name!=user && results.rows[0].password!=password){
+   res.send(<h2>You have entered Wrong Password!!</h2>);
+ }
   })
 
 });
