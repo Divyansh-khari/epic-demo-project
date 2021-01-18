@@ -47,8 +47,8 @@ app.post('/login', async(req,res)=>{
   var selectQuery= `SELECT name, password FROM Customer WHERE name='${user}'`;
   const result = await client.query(selectQuery);
   client.release();
-  res.send(result.name);
-  res.send(result.password);
+  res.send("Result is " +result.name);
+  res.send("and this " + result.password);
   if(result.name==user && result.password==password){
       res.render('pages/image');
   }
@@ -56,9 +56,7 @@ app.post('/login', async(req,res)=>{
     res.send("please Register your self.")
     res.redirect('/Register');
   }
-  else{
-      res.send("<h2>You have enetered Wrong Password or Username. Try Again!! </h2>")
-  }
+
 }
 catch (err) {
   console.error(err);
