@@ -51,9 +51,7 @@ app.post('/login',async(req,res)=>{
     res.send("Error is" + error)
   }
   var results = {'rows': result.rows}
-  if(results.rows[0].name==Undefined || results.rows[0].name==Undefined ){
-    res.send("<h2>Please Register yourself.</h2>")
-  }
+  
   if(results.rows[0].name==user && results.rows[0].password==password){
    res.render('pages/image');
  }
