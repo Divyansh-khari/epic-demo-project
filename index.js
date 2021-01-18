@@ -42,6 +42,7 @@ var app=express()
 app.post('/login', async(req,res)=>{
   var user=req.body.uname;
   var password= req.body.upassword;
+  try{
   var selectQuery= `SELECT name, password FROM Customer WHERE name='${user}'`;
   const result = await client.query(selectQuery);
   client.release();
@@ -55,6 +56,11 @@ app.post('/login', async(req,res)=>{
   else{
       res.send("<h2>You have enetered Wrong Password or Username. Try Again!! </h2>")
   }
+}
+catch (err) {
+  console.error(err);
+  res.send("Error here is : " + err);
+}
   });
 
 
