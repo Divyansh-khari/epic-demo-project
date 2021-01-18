@@ -39,7 +39,7 @@ var app=express()
 }
 
 
-app.post('/login',(req,res)=>{
+app.post('/login',async(req,res)=>{
   var user=req.body.uname;
   var password= req.body.upassword;
   const client = await pool.connect();
@@ -51,14 +51,14 @@ app.post('/login',(req,res)=>{
     res.send("Error is" + error)
   }
   var results = {'rows': result.rows}
-  if(results==''){
-    res.send("<h2> You have Not Registered Yourself. Please Register Yourself!!</h2>")
-  }
   if(results.rows[0].name==user && results.rows[0].password==password){
    res.render('pages/image');
  }
   if(results.rows[0].name!=user || results.rows[0].password!=password){
    res.send("<h2>You have entered a Wrong Password or Username!!</h2")
+ }
+ else{
+   res.redirect("/Register");
  }
   })
 });
