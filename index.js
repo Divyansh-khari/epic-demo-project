@@ -44,6 +44,7 @@ app.post('/login', async(req,res)=>{
   var password= req.body.upassword;
     var selectQuery= `SELECT name, password FROM Customer WHERE name='${user}'`;
     const client = await pool.connect();
+    client.release();
     pool.query(selectQuery,(error,result) =>{
     if(error){res.send(error)}
     var results = {'rows': result.rows}
