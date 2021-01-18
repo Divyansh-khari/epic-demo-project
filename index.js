@@ -42,18 +42,18 @@ var app=express()
 app.post('/login', async(req,res)=>{
   var user=req.body.uname;
   var password= req.body.upassword;
-  try{
-    const client= await pool.connect();
-    const result=await client.query('SELECT name, password FROM Customer WHERE name='${user}');
-    res.render(pages/image);
-  }
-  catch{
-    res.send("Error is "+ err);
-  }
+    var selectQuery= `SELECT name, password FROM Customer WHERE name='${user}'`;
+    pool.query(selectQuery,(error,result) =>{
+    if(error){res.send(error)}
+    var results = {'rows': result.rows}
+    if(results.name==user && result.password==password){
+     res.render(pages/image);
+    }
+    else{
+     res.send("<h2>You have enetered Wrong Password or Username. Try Again!! </h2>")
+   }}
+});
 
-
-}
-);
 
 app.post('/register',async(req, res)=>{
   f1= req.body.uname;
