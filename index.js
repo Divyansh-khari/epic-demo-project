@@ -46,10 +46,10 @@ app.post('/login', async(req,res)=>{
     const client= await pool.connect();
     const result=await client.query('SELECT name, password FROM Customer WHERE name='${user}');
     if(result==''){
-      res.send("User has not register.Please register yourself");
+      res.send("User has not Registered.Please register yourself");
       res.redirect('/Register');
     }
-    if(result.name=='${user}' && result.password=='${password}'){
+    else if(result.name=='${user}' && result.password=='${password}'){
       res.render(pages/images);
     }
     else{
