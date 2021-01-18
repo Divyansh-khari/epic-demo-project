@@ -45,16 +45,7 @@ app.post('/login', async(req,res)=>{
   try{
     const client= await pool.connect();
     const result=await client.query('SELECT name, password FROM Customer WHERE name='${user}');
-    if(result==''){
-      res.send("User has not register.Please register yourself");
-      res.redirect('/Register');
-    }
-    if(result.name==user && result.password==password){
-      res.render(pages/images);
-    }
-    else{
-      res.send("<h2>You have enetered Wrong Password or Username. Try Again!! </h2>")
-    }
+    res.render(pages/image);
   }
   catch{
     res.send("Error is "+ err);
