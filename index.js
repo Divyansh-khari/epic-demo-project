@@ -39,7 +39,7 @@ var app=express()
 }
 
 
-app.post('/login', async(req,res)=>{
+app.post('/login',(req,res)=>{
   var user=req.body.uname;
   var password= req.body.upassword;
   const client = await pool.connect();
