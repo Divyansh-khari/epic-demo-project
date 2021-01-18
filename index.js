@@ -42,27 +42,21 @@ var app=express()
 app.post('/login', async(req,res)=>{
   var user=req.body.uname;
   var password= req.body.upassword;
-  try{
   const client = await pool.connect();
   var selectQuery= `SELECT name, password FROM Customer WHERE name='${user}'`;
   const result = await client.query(selectQuery);
   client.release();
-  res.send("Result is " +result.name);
-  res.send("and this " + result.password);
-  if(result.name==user && result.password==password){
-      res.render('pages/image');
+  pool.query(selectQuery,(error,result)=>{
+  if(error){
+    res.send("Error is" + error)
   }
-  else if(result==''){
-    res.send("please Register your self.")
-    res.redirect('/Register');
-  }
+  var results = {'rows': result.rows}
+  if(results.rows[0].name==user && results.rows[0].password==password){
+   res.render('pages/image');
+ }
+  })
 
-}
-catch (err) {
-  console.error(err);
-  res.send("Error here is : " + err);
-}
-  });
+});
 
 
 app.post('/register',async(req, res)=>{
