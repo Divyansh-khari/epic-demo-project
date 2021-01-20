@@ -52,9 +52,6 @@ app.post('/login',async(req,res)=>{
   }
   var results = {'rows': result.rows}
 
- if(results.rows.length()==0){
-   res.send("Register Yourself. You are not Registered");
- }
   if(results.rows[0].name==user && results.rows[0].password==password){
 
    res.render('pages/image');
