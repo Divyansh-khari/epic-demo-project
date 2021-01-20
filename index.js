@@ -58,9 +58,9 @@ app.post('/login',async(req,res)=>{
   if(results.rows[0].name!=user || results.rows[0].password!=password){
    res.send("<h2>You have entered a Wrong Password or Username!!</h2")
  }
- if(results.rows[0].name!=user){
+ if(user!=results.rows[0].name){
    res.send("Please Register Yourself!!");
-   
+
  }
   })
 });
