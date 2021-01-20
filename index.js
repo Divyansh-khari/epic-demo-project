@@ -60,7 +60,7 @@ app.post('/login',async(req,res)=>{
  }
  if(results.rows[0].name!=user){
    res.send("Please Register Yourself!!");
-   res.redirect("/Register");
+   
  }
   })
 });
