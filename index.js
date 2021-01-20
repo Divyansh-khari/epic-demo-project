@@ -51,6 +51,7 @@ app.post('/login',async(req,res)=>{
     res.send("Error is" + error)
   }
   var results = {'rows': result.rows}
+  console.log(results)
 
   if(results.rows[0].name==user && results.rows[0].password==password){
    res.render('pages/image');
