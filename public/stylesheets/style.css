@@ -1,5 +1,9 @@
 table{
   border: 1pt solid black;
+  align-items: center;
+}
+h2{
+  align-items: center;
 }
 td{
   border: 1pt solid black;
