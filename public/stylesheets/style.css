@@ -1,9 +1,9 @@
 table{
   border: 1pt solid black;
-  align-items: center;
+  text-align: center;
 }
 h2{
-  align-items: center;
+text-align: center;
 }
 td{
   border: 1pt solid black;
