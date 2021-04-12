@@ -44,27 +44,47 @@
         background-color: rgb(152,255,152);
         text-align: center;
       }
+      .mytext {
+        width: 500px;
+        height: 30px;
+        border-radius: 25px;
+        border: 2px solid #D3D3D3;
+    }
+    .dev{
+      border: 2px solid #000000;
+    }
+    #search {
+    width: 150px;
+    height: 2em;
+    font-size: 20pt;
+    background-color:  #66ccff;
+    border: 2px
+    }
+    .wrapper{
+      text-align: center;
+    }
 
       </style>
 
     </head>
     <body>
       <img src="EPIC LOGO.jpg" width="150" height="60">
-      <h1 class="elon">Login Page for Users:</h1>
+      <h1 class="elon">Log Into Epic</h1>
       <div class= "qwerty">
       <form class="tyler" action="/login" method="post">
-        <fieldset>
-          <legend class="roy">Please Login:</legend>
+        <fieldset class="dev">
           <p>
-        <label>UserName:</label><input type="text" id="username" name="uname" placeholder="Enter the UserName">
+        <input type="text" id="username" name="uname" placeholder="UserName" class="mytext" />
       </p>
         <br><br>
         <p>
-        <label>Password:</label><input type="password" id="password" name="upassword" placeholder="Enter the Password">
+        <input type="password" id="password" name="upassword" placeholder="Password" class="mytext" />
       </p>
         <br><br>
-
-        <button>Submit</button>
+        <div class="wrapper">
+        <button id="search">Log In</button>
+        <button id="search"> Create New Account</button>
+      </div>
 
       </fieldset>
        </form>
